@@ -1,0 +1,83 @@
+/*
+Theme Name: WP Bootstrap
+Theme URI: http://teamtreehouse.com/wordpress-bootstrap-theme-tutorial
+Description: A demo theme built to accompany the Treehouse blog post <a href="http://teamtreehouse.com/wordpress-bootstrap-theme-tutorial">How to Build a WordPress Theme with Bootstrap</a>.
+Author: Zac Gordon
+Author URI: http://teamtreehouse.com/
+Version: 1.0
+Tags: responsive, white, bootstrap
+
+License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+License URI: http://creativecommons.org/licenses/by-sa/3.0/
+
+This simple theme was built using the example Bootstrap theme "Basic marketing site" found on the Bootstrap web site http://twitter.github.com/bootstrap/examples/hero.html
+*/
+/* line 17, C:\xampp\htdocs\kobotolo\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000317}}
+.page-template-page-mall1-php .entry-image img {
+  width: 100%;
+}
+/* line 20, C:\xampp\htdocs\kobotolo\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000320}}
+.site-inner {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* line 24, C:\xampp\htdocs\kobotolo\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000324}}
+.row.before_footer {
+  margin-left: -15px;
+}
+/* line 27, C:\xampp\htdocs\kobotolo\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000327}}
+#slideshow {
+  margin: 0px auto;
+  position: relative;
+  width: 100%;
+  padding: 0px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+/* line 34, C:\xampp\htdocs\kobotolo\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000334}}
+.xx > img {
+  width: 100%;
+}
+/* line 36, C:\xampp\htdocs\kobotolo\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000336}}
+#slideshow > div {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+/* line 44, C:\xampp\htdocs\kobotolo\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000344}}
+.before_footer {
+  clear: both;
+  background: grey;
+}
+/* line 48, C:\xampp\htdocs\kobotolo\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000348}}
+.slider {
+  overflow: hidden;
+  background: grey;
+  height: 90vh;
+  width: 100%;
+  margin: 0 auto;
+}
+/* line 56, C:\xampp\htdocs\kobotolo\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000356}}
+.entry-data {
+  clear: both;
+}
+/* line 59, C:\xampp\htdocs\kobotolo\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000359}}
+.entry {
+  clear: both;
+}
+/* line 64, C:\xampp\htdocs\kobotolo\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000364}}
+.site-container {
+  background: whitesmoke;
+}
