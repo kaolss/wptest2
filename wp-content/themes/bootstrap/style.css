@@ -60,13 +60,7 @@ This simple theme was built using the example Bootstrap theme "Basic marketing s
 }
 /* line 48, C:\xampp\htdocs\kobotolo\less\style.less */
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000348}}
-.slider {
-  overflow: hidden;
-  background: grey;
-  height: 90vh;
-  width: 100%;
-  margin: 0 auto;
-}
+
 /* line 56, C:\xampp\htdocs\kobotolo\less\style.less */
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000356}}
 .entry-data {
