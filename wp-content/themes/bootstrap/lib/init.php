@@ -10,7 +10,7 @@
 require_once( dirname( __FILE__ ) . '/post_functions.php' );
 require_once( dirname( __FILE__ ) . '/kobotolo_settings.php' );
 
-add_action( 'wp_enqueue_scripts', 'load_fontawesome_style', 999 );
+add_action( 'wp_enqueue_scripts', 'load_fontawesome_style', 998 );
 function load_fontawesome_style() {
     wp_enqueue_style( 'afn-font-awesome', get_bloginfo( 'stylesheet_directory' ) . '/fonts/font-awesome.min.css', array(), '4.0.3' );
 }
