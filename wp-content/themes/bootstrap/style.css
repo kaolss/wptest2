@@ -10,73 +10,84 @@ Tags: responsive, white, bootstrap
 License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
 License URI: http://creativecommons.org/licenses/by-sa/3.0/
 
-
-
-
-
-
 This simple theme was built using the example Bootstrap theme "Basic marketing site" found on the Bootstrap web site http://twitter.github.com/bootstrap/examples/hero.html
 */
-/* line 17, C:\xampp\htdocs\kobotolo\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000317}}
+/* line 18, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/style\.less}line{font-family:\0000318}}
+.sticky {
+  background: grey;
+  padding: 15px;
+}
+/* line 23, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/style\.less}line{font-family:\0000323}}
 .page-template-page-mall1-php .entry-image img {
   width: 100%;
 }
-/* line 20, C:\xampp\htdocs\kobotolo\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000320}}
+/* line 27, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/style\.less}line{font-family:\0000327}}
+.wp-caption,
+article img {
+  max-width: 100%;
+  height: auto;
+}
+/* line 32, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/style\.less}line{font-family:\0000332}}
+.alignright {
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+/* line 37, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/style\.less}line{font-family:\0000337}}
+.alignleft {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+/* line 44, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/style\.less}line{font-family:\0000344}}
 .site-inner {
   padding-left: 15px;
   padding-right: 15px;
 }
-/* line 24, C:\xampp\htdocs\kobotolo\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000324}}
+/* line 49, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/style\.less}line{font-family:\0000349}}
 .row.before_footer {
   margin-left: -15px;
 }
-/* line 27, C:\xampp\htdocs\kobotolo\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000327}}
-#slideshow {
-  margin: 0px auto;
-  position: relative;
-  width: 100%;
-  padding: 0px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-}
-/* line 34, C:\xampp\htdocs\kobotolo\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000334}}
-.xx > img {
-  width: 100%;
-}
-/* line 36, C:\xampp\htdocs\kobotolo\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000336}}
-#slideshow > div {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-}
-/* line 44, C:\xampp\htdocs\kobotolo\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000344}}
+/* line 53, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/style\.less}line{font-family:\0000353}}
 .before_footer {
   clear: both;
   background: grey;
 }
-/* line 48, C:\xampp\htdocs\kobotolo\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000348}}
-
-/* line 56, C:\xampp\htdocs\kobotolo\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000356}}
+/* line 57, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/style\.less}line{font-family:\0000357}}
+.slider {
+  overflow: hidden;
+  background: grey;
+  height: 90vh;
+  width: 100%;
+  margin: 0 auto;
+}
+/* line 65, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/style\.less}line{font-family:\0000365}}
 .entry-data {
   clear: both;
 }
-/* line 59, C:\xampp\htdocs\kobotolo\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000359}}
+/* line 67, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/style\.less}line{font-family:\0000367}}
+.entry-data span {
+  margin-left: 0;
+  display: initial;
+}
+/* line 71, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/style\.less}line{font-family:\0000371}}
 .entry {
   clear: both;
 }
-/* line 64, C:\xampp\htdocs\kobotolo\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/kobotolo\/less\/style\.less}line{font-family:\0000364}}
+/* line 76, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/style\.less}line{font-family:\0000376}}
 .site-container {
   background: whitesmoke;
 }
