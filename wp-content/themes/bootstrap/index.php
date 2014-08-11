@@ -6,33 +6,23 @@
  * and open the template in the editor.
  */
 get_header(); ?>
-<div class="row">
-	<div class="span8">
-		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-			<div class="entry">
-			<?php get_template_part( 'entry-data' ); ?>
-			<?php if( has_post_thumbnail() ) : ?>
-				<br>
-				<div class="span2">
-					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-						<?php the_post_thumbnail('thumbnail'); ?>
-					</a>
-				</div>
-			<?php endif; ?>
-			<div class="span5 entry-content">
-				<?php $content= get_the_content(); 
-				echo $content;?>
-			</div>
-			<?php get_template_part( 'entry-meta' ); ?>
-			<br>
-			<?php comments_template(); ?>
-			</div>
-				<?php endwhile; 
-		else: ?>
-			<p><?php _e('Sorry, this page does not exist.'); ?></p>
-		<?php endif; ?>
+<div class="row site-inner">
+  <div class="col-md-8">
+	<?php if ( have_posts() ) : 
+		while ( have_posts() ) : the_post(); ?>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
+                    <?php do_action( 'entry_data' ); ?>
+                    <?php do_action( 'entry_thumbnail' ); ?>
+                    <?php do_action( 'entry_content' ); ?>
+                    <?php do_action( 'entry_meta' ); ?>
+                    <?php do_action( 'entry_comment' ); ?>
+		</article>
+           <?php endwhile; 
+	else: ?>
+		<p><?php _e('Sorry, this page does not exist.'); ?></p>
+	<?php endif; ?>
   </div>
-  <div class="span4">
+  <div class="col-md-4">
 	<?php get_sidebar(); ?>  	
   </div>
 </div>
