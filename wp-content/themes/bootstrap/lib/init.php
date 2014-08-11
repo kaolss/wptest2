@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-//require_once( dirname( __FILE__ ) . '/genesis_responsive_menu.php' );
+require_once( dirname( __FILE__ ) . '/genesis_responsive_menu.php' );
 require_once( dirname( __FILE__ ) . '/post_functions.php' );
 require_once( dirname( __FILE__ ) . '/kobotolo_settings.php' );
 
