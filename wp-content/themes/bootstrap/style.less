@@ -1,0 +1,98 @@
+/*
+Theme Name: WP Bootstrap
+Theme URI: http://teamtreehouse.com/wordpress-bootstrap-theme-tutorial
+Description: A demo theme built to accompany the Treehouse blog post <a href="http://teamtreehouse.com/wordpress-bootstrap-theme-tutorial">How to Build a WordPress Theme with Bootstrap</a>.
+Author: Zac Gordon
+Author URI: http://teamtreehouse.com/
+Version: 1.0
+Tags: responsive, white, bootstrap
+
+License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+License URI: http://creativecommons.org/licenses/by-sa/3.0/
+
+This simple theme was built using the example Bootstrap theme "Basic marketing site" found on the Bootstrap web site http://twitter.github.com/bootstrap/examples/hero.html
+*/
+
+
+
+@inner_padding: 15px;
+
+
+#portfolio {     
+        .portfolio-item.post-3 { width: 33%; }
+        .portfolio-item.post-4 { width: 25%; }
+        .portfolio-item.post-5 { width: 20%; }
+        .grid-sizer { width: 33%; }
+        .portfolio-item.post-3:hover  { margin-left:-3%;margin-top:-6%;width:39%;border:1px grey solid;background:whitesmoke;z-index:100;transition: ease 0.5s all; }
+        .portfolio-item.post-4:hover  { margin-left:-3%;margin-top:-6%;width:31%;border:1px grey solid;background:whitesmoke;z-index:100; }
+        .portfolio-item.post-5:hover  { margin-left:-3%;margin-top:-6%;width:26%;border:1px grey solid;background:whitesmoke;z-index:100; }
+        .portfolio-item:hover >.text { display:block;padding:10px;}
+    .text { display:none; }
+    .img {width:23%;padding:0;margin:0;}
+    #column-width-demo2 .item.w2 { width: 40%; }
+}
+
+img.portfolio-image.wp-post-image {max-width:100%;height:auto;padding:0;margin:0;}
+.sticky {
+    background:red;
+    padding:15px;
+}
+
+.page-template-page-mall1-php .entry-image img {
+    width: 100%;
+}
+
+.wp-caption,
+article img {
+        max-width: 100%;
+        height:auto;
+    }
+    
+    
+.alignright {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.alignleft {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+
+.site-inner {
+    padding-left: @inner_padding;
+    padding-right: @inner_padding;
+}
+
+.row.before_footer {
+    margin-left: -@inner_padding;
+}
+
+.before_footer {
+    clear: both;
+    background: grey;
+}
+.slider { 
+    overflow:hidden;
+    background: grey;
+    height:90vh;
+    width :100%;
+    margin :0 auto;}
+.wrap {
+}
+.entry-data {
+    clear: both;
+    span {
+        margin-left: 0;
+        display:initial;}
+}
+.entry {
+    clear: both;
+}
+.entry-content{
+}
+.site-container {
+    background: whitesmoke;
+}
