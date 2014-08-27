@@ -10,7 +10,7 @@
 ********************** Entry data ********************************************
 *****************************************************************************/
 add_action('entry_data', 'kobotolo_entry_data', 10);
-function kobotolo_entry_data() { ?>
+function kobotolo_entry_data($showinfo=true) { ?>
     <div class="entry-data">
 	<?php if (is_single()) {
 	    the_title('<h1 class="entry-title post-title">', '</h1>');
@@ -19,10 +19,11 @@ function kobotolo_entry_data() { ?>
 	    <h2 class="entry-title post-title">
 	    <a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 	<?php }
-	$date = get_the_date();	?>
+	if (!is_page_template('page-portfolio.php')) {
+            $date = get_the_date();	?>
 	<span class=" span-date"><?php echo $date . ',&nbsp; '; ?></span>
-	<span class=" span-author"><?php the_author_link(); ?></span><br>
-    </div>
+	<span class=" span-author"><?php the_author_posts_link(); ?></span><br>
+        <?php } ?></div>
  <?php }
 
 /*****************************************************************************
@@ -70,14 +71,19 @@ function kobotolo_entry_content( ) {
 ****************************************************************************/
 add_action( 'entry_thumbnail', 'kobotolo_entry_thumbnail', 10 );
 function kobotolo_entry_thumbnail( ) {
-    if( has_post_thumbnail() && !is_single() ) : ?>
+    if( has_post_thumbnail() && !is_single()&& get_post_type()=='post' ) : ?>
         <br>
         <div class="col-md-3">
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                 <?php the_post_thumbnail(); ?>
             </a>
         </div>
-    <?php endif; ?>
+    <?php else : ?> 
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                <?php //the_post_thumbnail(); ?>
+                <?php the_post_thumbnail( 'portfolio', array( 'class' => 'portfolio-image' ) ); ?>
+            </a> 
+<?php         endif; ?>
 <?php }
 
 
