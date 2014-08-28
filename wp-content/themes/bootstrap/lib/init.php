@@ -9,6 +9,7 @@
 require_once( dirname( __FILE__ ) . '/post_functions.php' );
 require_once( dirname( __FILE__ ) . '/kobotolo_settings.php' );
 require_once( dirname( __FILE__ ) . '/portfolio.php' );
+require_once( dirname( __FILE__ ) . '/portfolio2.php' );
 require_once( dirname( __FILE__ ) . '/KoBoToLo - Meta.php' );
 
 add_action( 'wp_enqueue_scripts', 'load_fontawesome_style', 999 );
@@ -42,8 +43,10 @@ wp_enqueue_script('jquery');
 
 
 }
-add_image_size('portfolio', 400, 400, true);
-add_filter('image_size_names_choose', 'display_image_sizes');
+add_image_size('portfolio_3', 500, 500, true);
+add_image_size('portfolio_4', 400, 400, true);
+add_image_size('portfolio_5', 300, 300, true);
+//add_filter('image_size_names_choose', 'display_image_sizes');
 function display_image_sizes($sizes) {
    $sizes['portfolio'] = __( 'portfolio' );
    return $sizes;
@@ -116,3 +119,37 @@ function mason_script() {
 }
 add_action( 'wp_enqueue_scripts', 'mason_script' );
 
+add_filter('image_downsize', 'ml_media_downsize', 10, 3);
+function ml_media_downsize($out, $id, $size) {
+    if (is_admin()) return;
+	$imagedata = wp_get_attachment_metadata($id);
+	if (is_array($imagedata) && isset($imagedata['sizes'][$size]))
+                return false;
+	global $_wp_additional_image_sizes;
+        if (!isset($_wp_additional_image_sizes[$size])) return false;
+            if (!$resized = image_make_intermediate_size(
+                get_attached_file($id),
+                $_wp_additional_image_sizes[$size]['width'],
+                $_wp_additional_image_sizes[$size]['height'],
+                $_wp_additional_image_sizes[$size]['crop']
+            ))
+                return false;
+
+            // Save image meta, or WP can't see that the thumb exists now
+ //           $imagedata['sizes'][$size] = $resized;
+            wp_update_attachment_metadata($id, $imagedata);
+
+            $att_url = wp_get_attachment_url($id);
+            return array(dirname($att_url) . '/' . $resized['file'], $resized['width'], $resized['height'], true);
+        }
+
+
+//        add_filter('intermediate_image_sizes_advanced', 'ml_media_prevent_resize_on_upload');
+        function ml_media_prevent_resize_on_upload($sizes) {
+            // Removing these defaults might cause problems, so we don't
+            return array(
+                'thumbnail' => $sizes['thumbnail'],
+                'medium' => $sizes['medium'],
+                'large' => $sizes['large']
+            );
+        }
