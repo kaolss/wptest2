@@ -9,8 +9,8 @@
 require_once( dirname( __FILE__ ) . '/post_functions.php' );
 require_once( dirname( __FILE__ ) . '/kobotolo_settings.php' );
 require_once( dirname( __FILE__ ) . '/portfolio.php' );
-require_once( dirname( __FILE__ ) . '/portfolio2.php' );
-require_once( dirname( __FILE__ ) . '/KoBoToLo - Meta.php' );
+//require_once( dirname( __FILE__ ) . '/portfolio2.php' );
+require_once( dirname( __FILE__ ) . '/kobotolo_tax.php' );
 
 add_action( 'wp_enqueue_scripts', 'load_fontawesome_style', 999 );
 function load_fontawesome_style() {
@@ -114,42 +114,62 @@ function kobotolo_widgets_init() {
 add_action( 'widgets_init', 'kobotolo_widgets_init' );
 
 function mason_script() {
- wp_enqueue_script( 'masonry' );
- wp_enqueue_script( 'masonry-init', get_bloginfo( 'stylesheet_directory' ) . '/lib/js/masonry-init.js', '', '', true );
+    wp_enqueue_script( 'masonry' );
+    wp_enqueue_script( 'masonry-init', get_bloginfo( 'stylesheet_directory' ) . '/lib/js/masonry-init.js', '', '', true );
 }
 add_action( 'wp_enqueue_scripts', 'mason_script' );
 
 add_filter('image_downsize', 'ml_media_downsize', 10, 3);
 function ml_media_downsize($out, $id, $size) {
+    $test =0;
     if (is_admin()) return;
-	$imagedata = wp_get_attachment_metadata($id);
-	if (is_array($imagedata) && isset($imagedata['sizes'][$size]))
-                return false;
-	global $_wp_additional_image_sizes;
+if ($test) print_r($size);
+if ($test) print_r($out);
+if ($test) print_r($id);
+    
+    $imagedata = wp_get_attachment_metadata($id);
+if ($test) echo "\nImagemetadata<pre>";
+if ($test) var_dump($imagedata['sizes']);
+    
+    if (is_array($imagedata) && isset($imagedata['sizes'][$size]))
+    return false;
+    
+if ($test) echo "\nmedia_down_size do not exist i databas\n ";
+    	global $_wp_additional_image_sizes;
+if ($test) print_r($_wp_additional_image_sizes[$size]);
         if (!isset($_wp_additional_image_sizes[$size])) return false;
-            if (!$resized = image_make_intermediate_size(
-                get_attached_file($id),
-                $_wp_additional_image_sizes[$size]['width'],
+if ($test) echo "\nsize do not exist".$size."\n";
+if ($test) echo "\nid:". get_attached_file($id)."\n";
+    $filepath=get_attached_file($id);
+        
+if ($test) 	echo "\nfilepath:".$filepath."\n";
+	$resized = image_make_intermediate_size(
+                $filepath,
+		$_wp_additional_image_sizes[$size]['width'],
                 $_wp_additional_image_sizes[$size]['height'],
                 $_wp_additional_image_sizes[$size]['crop']
-            ))
+            );
+if ($test) 	    echo "\nResized=";
+if ($test) print_r($resized);
+	    if (!$resized )
                 return false;
+if ($test) echo 'media_dow_size 2';
 
             // Save image meta, or WP can't see that the thumb exists now
- //           $imagedata['sizes'][$size] = $resized;
+            $imagedata['sizes'][$size] = $resized;
             wp_update_attachment_metadata($id, $imagedata);
 
             $att_url = wp_get_attachment_url($id);
             return array(dirname($att_url) . '/' . $resized['file'], $resized['width'], $resized['height'], true);
-        }
-
-
-//        add_filter('intermediate_image_sizes_advanced', 'ml_media_prevent_resize_on_upload');
-        function ml_media_prevent_resize_on_upload($sizes) {
-            // Removing these defaults might cause problems, so we don't
-            return array(
-                'thumbnail' => $sizes['thumbnail'],
-                'medium' => $sizes['medium'],
-                'large' => $sizes['large']
-            );
-        }
+if ($test)  echo "</pre>\n";       
+ 
+}
+    
+function filter_image_sizes( $sizes) {   
+    unset( $sizes['portfolio_3']);
+    unset( $sizes['portfolio_4']);
+    unset( $sizes['portfolio_5']);
+    return $sizes;
+}
+add_filter('intermediate_image_sizes_advanced', 'filter_image_sizes');
+        
