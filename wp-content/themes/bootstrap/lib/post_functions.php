@@ -19,7 +19,7 @@ function kobotolo_entry_data($showinfo=true) { ?>
 	    <h2 class="entry-title post-title">
 	    <a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 	<?php }
-	if (!is_page_template('page-portfolio.php')) {
+	if ($showinfo) {
             $date = get_the_date();	?>
 	<span class=" span-date"><?php echo $date . ',&nbsp; '; ?></span>
 	<span class=" span-author"><?php the_author_posts_link(); ?></span><br>
@@ -69,8 +69,8 @@ function kobotolo_entry_content( ) {
 /*****************************************************************************
 ********************** Entry thumbnail ****************************************
 ****************************************************************************/
-add_action( 'entry_thumbnail', 'kobotolo_entry_thumbnail', 10 );
-function kobotolo_entry_thumbnail( ) {
+add_action( 'entry_thumbnail', 'kobotolo_entry_thumbnail', 10,1 );
+function kobotolo_entry_thumbnail( $portfolio_nr=3) {
     if( has_post_thumbnail() && !is_single()&& get_post_type()=='post' ) : ?>
         <br>
         <div class="col-md-3">
@@ -78,10 +78,20 @@ function kobotolo_entry_thumbnail( ) {
                 <?php the_post_thumbnail(); ?>
             </a>
         </div>
-    <?php else : ?> 
+    <?php elseif (get_post_type()=='portfoliok' ) : ?> 
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                <?php //the_post_thumbnail(); ?>
-                <?php the_post_thumbnail( 'portfolio', array( 'class' => 'portfolio-image' ) ); ?>
+                <?php //the_post_thumbnail(); 
+                switch ($portfolio_nr) {
+		    case 3:
+			the_post_thumbnail( 'portfolio_3', array( 'class' => 'portfolio-image' ) ); 
+			break;
+		    case 4:
+			the_post_thumbnail( 'portfolio_4', array( 'class' => 'portfolio-image' ) ); 
+			break;
+		    case 5:
+			the_post_thumbnail( 'portfolio_5', array( 'class' => 'portfolio-image' ) ); 
+			break;
+		} ?>
             </a> 
 <?php         endif; ?>
 <?php }
