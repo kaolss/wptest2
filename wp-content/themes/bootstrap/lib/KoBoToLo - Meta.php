@@ -2,182 +2,137 @@
 /* 
 Plugin Name: KoBoToLo - Meta
 Plugin URI:  
-Description: (c) KoBoToLo - to be used by varmlandsmat.se. Adds the post-type producents and associated meta. Adds an orderby by post_type title
+Description: General class for metaboxes on pages 
 Version: 1
 Author: KoBoToLo - Karin H Olsson
 Author URI: http://www.kobotolo.se 
 */
 
 class Cls_Meta {
+    private $DB_field;
     private $Meta_fields_check;
     private $Meta_fields_text;
-    private $Meta_fields_textarea;
-    public function __construct($check, $text, $textarea){
+    private $Meta_fields_area;
+    private $Meta_fields_special;
+    public function __construct($check, $text, $textarea, $DB_field, $special=''){
+	add_action('admin_head', array( $this, 'show_metabox'));
         add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
         add_action( 'save_post', array( $this, 'save' ) );		
         $this->Meta_fields_check=$check;
+        $this->Meta_fields_area=$textarea;
         $this->Meta_fields_text=$text;
-        $this->Meta_fields_textarea=$textarea;    
+        $this->DB_field=$DB_field;    
+        $this->Meta_fields_special=$special;    
     }
     public function add_meta_box() {
         add_meta_box(
-                 'portfolio_pagediv'
-                ,__( 'Portfolio Settings', 'txt_KoBoToLo' )
+                 $this->DB_field.'div'
+	        ,__( 'Portfolio Settings', 'txt_KoBoToLo' )
                 ,array( $this, 'render_meta_box_content' )
                 ,'page'
                 ,'normal'
                 ,'high'
         );
     }
-    public function add_events_metaboxes (){
-            echo 'add_events_metaboxes';
-            $args = array(
-                //'descendants_and_self'  => 0,
-                //'selected_cats'         => false,
-                //'popular_cats'          => false,
-                //'walker'                => null,
-                'taxonomy'              => 'portfolio_categories',
-                //'checked_ontop'         => true
-                ); 
-            wp_terms_checklist($post_ID, $args );
-        }
+    function Meta_install() {    }
 
-	function Meta_install() {    }
-
-	public function save( $post_id ) {
+    public function save( $post_id ) {
             // Check if our nonce is set.
-		if ( ! isset( $_POST['myplugin_inner_custom_box_nonce'] ) )
-			return $post_id;
+	if ( ! isset( $_POST['kobotolo_meta_nonce'] ) )return $post_id;
+	$nonce = $_POST['kobotolo_meta_nonce'];
+	// Verify that the nonce is valid.
+	if ( ! wp_verify_nonce( $nonce, 'kobotolo_meta' ) ) return $post_id;
 
-		$nonce = $_POST['myplugin_inner_custom_box_nonce'];
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return $post_id;
 
-		// Verify that the nonce is valid.
-		if ( ! wp_verify_nonce( $nonce, 'myplugin_inner_custom_box' ) )
-			return $post_id;
-
-		// If this is an autosave, our form has not been submitted, so we don't want to do anything.
-		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
-			return $post_id;
-
-		// Check the user's permissions.
-		if ( 'page' == $_POST['post_type'] ) {
-			if ( ! current_user_can( 'edit_page', $post_id ) )
-				return $post_id;
-		} 
-		else {
-
-			if ( ! current_user_can( 'edit_post', $post_id ) )	return $post_id;
-		}
-		/* OK, its safe for us to save the data now. */
-        
-		// Sanitize the user input.
-		$cat_keys = array_keys($_POST['products']);
+	if ( 'page' == $_POST['post_type'] ) {
+	    if ( ! current_user_can( 'edit_page', $post_id ) )return $post_id;
+	} 
+	else {
+	    if ( ! current_user_can( 'edit_post', $post_id ) )	return $post_id;
+	}
+		
+	$cat_keys = array_keys($_POST[$this->DB_field]);
         foreach ($cat_keys as $key){
-             if (isset($_POST['products'][$key])){
-                $cat_meta[$key] = $_POST['products'][$key];
-             }
-          }
-		  
-		  update_post_meta( $post_id, 'products', $cat_meta );
-          if (isset($_POST['products']['butik']))
-          {
-
-		  	$cat_ids = array(7,43);
-		
-			$s= wp_set_object_terms( $post_id, $cat_ids, 'producentkat' );
-			
-		  }
-		else  {
-			wp_set_object_terms( $post_id, null, 'producentkat' );
-				  	$cat_ids = array(43);
-		
-			$s= wp_set_object_terms( $post_id, $cat_ids, 'producentkat' );
-		}
-}
+	    if (isset($_POST[$this->DB_field][$key])){
+                $cat_meta[$key] = $_POST[$this->DB_field][$key];
+	    }    
+	}
+	update_post_meta( $post_id, $this->DB_field, $cat_meta );
+    }
     public function render_meta_box_content( $post ) {
+	// Add an nonce field so we can check for it later.
+	wp_nonce_field( 'kobotolo_meta', 'kobotolo_meta_nonce' );
+	$value = get_post_meta( $post->ID, $this->DB_field);
+	/*********************** Checkboxes ***********************************/
+	foreach ($this->Meta_fields_check as $key=>$field) {
+	    $text='';
+	    if (isset($value[0][$key])) $x=$value[0][$key]; else $x=$field[1];
+		if ($x=='1') {$text=" checked";} ?>
+		<label for="<?php echo $key;?>"><?php _e( $field[0], 'kobotolo' );?></label>
+		    <input type="checkbox" value='1' id="<?php echo $this->DB_field.'['.$key; ?>]" 
+			name="<?php echo $this->DB_field.'['.$key; ?>]" 
+		    <?php echo $text; ?>><br/>		
+	<?php } 
 	
-		// Add an nonce field so we can check for it later.
-		wp_nonce_field( 'myplugin_inner_custom_box', 'myplugin_inner_custom_box_nonce' );
+	/*********************** Textareaor ***********************************/
+	foreach ($this->Meta_fields_area as $key=>$field) {
+	    echo 'field';print_r($field);echo '<br>';
+	    if (isset($value[0][$key])) $x=$value[0][$key]; else $x=$field[1];
+	    <label for="<?php echo $key;?>"><?php _e( $field[0], 'kobotolo' );?></label>
+	    <textarea id="<?php echo $this->DB_field.'['.$key; ?>]"  
+		wrap="hard" name="<?php echo $this->DB_field.'['.$key; ?>]"  
+		cols="35" rows="2"><?php echo $x;?></textarea><br/>
+	<?php } 
+	
+	/*********************** Text ***********************************/
+	foreach ($this->Meta_fields_text as $key=>$field) {
+	    if (isset($value[0][$key])) $x=$value[0][$key]; else $x=$field[1];?>
+	    <label for="<?php echo $key;?>"><?php _e( $field[0], 'kobotolo' );?></label>
+		<input type="text" size="35" 
+		id="<?php echo $this->DB_field.'['.$key; ?>]"
+		name="<?php echo $this->DB_field.'['.$key; ?>]"value="<?php echo $x;?>" /><br>
+	<?php } 			
+	
+	$this->render_special();
+    }
 
-		
-		$value = get_post_meta( $post->ID, 'products');
-                  foreach ($this->Meta_fields_check as $field) {
-			$name = 'pro_'.$field;
-			$text='';
-			//echo $value[0]['butik'];
-			if (isset($value[0][$field])) $x=$value[0][$field]; else $x='';
-			if ($x=='1') {$text=" checked";} ?>
-    		<label for="<?php echo $field;?>"><?php _e( $field, 'kobotolo' );?></label><br>
-		
-			<input type="checkbox" value='1' id="products[<?php echo $field; ?>]" 
-			name="products[<?php echo $field; ?>]" 
-			<?php echo $text; ?>><br/>		
-		<?php } 
-		foreach ($this->Meta_fields_textarea as $field) {
-			if (isset($value[0][$field])) $x=$value[0][$field]; else $x='';?>
-			<label for="<?php echo $field;?>"><?php _e( $field, 'kobotolo' );?></label><br>
-			<textarea id="products[<?php echo $field; ?>]"  
-				wrap="hard" name="products[<?php echo $field; ?>]"  
-				cols="35" rows="2"><?php echo $x;?></textarea><br/>
-		<?php } 
-		foreach ($this->Meta_fields_text as $key=>$field) {
-			//echo 'key'.$key.'<br>';
-                        //echo 'field'.$field.'<br>';
-                        if (isset($value[0][$key])) $x=$value[0][$key]; else $x='';?>
-			<label for="<?php echo $key;?>"><?php _e( $field, 'kobotolo' );?></label><br>
-			<input type="text" size="35" 
-			id="products[<?php echo $key; ?>]" 
-			name="products[<?php echo $key; ?>]" 
-			value="<?php echo $x;?>" /><br>
-		<?php } 			
-            $args = array(
-                //'descendants_and_self'  => 0,
-                //'selected_cats'         => false,
-                //'popular_cats'          => false,
-                //'walker'                => null,
-                'taxonomy'              => 'portfolio_categories',
-                //'checked_ontop'         => true
-                ); 
-            //$x= wp_terms_checklist($post->ID, $args );?>
-            <label for="inputCountries">Cats</label>
-				<div>
-					<?php wp_terms_checklist(get_the_ID(), array(
-						'taxonomy' => 'portfolio_categories',
-					)); ?>
-				</div>
-<?php	}
-}
-/* 
- * Change Meta Box visibility according to Page Template
- *
- * Observation: this example swaps the Featured Image meta box visibility
- *
- * Usage:
- * - adjust $('#postimagediv') to your meta box
- * - change 'page-portfolio.php' to your template's filename
- * - remove the console.log outputs
- */
+    Private function render_special() {
+	if ($this->Meta_fields_special!='') {
+//	    print_r($this->Meta_fields_special);
+	    foreach ($this->Meta_fields_special as $key=>$field) {
+		//echo 'key';print_r($key);echo '<br>field';print_r($field);
+		switch( $field[0]){
+		case 'Taxonomy':?>
+			<label for="<?php echo $fields[1];?>"><?php echo $field[1]?></label>
+		        <div>
+			    <?php wp_terms_checklist(get_the_ID(), array(
+				    'taxonomy' => $key
+			    )); ?>
+			</div>
+		<?php break;
+	    }   
+        }
+    }}
 
-add_action('admin_head', 'wpse_50092_script_enqueuer');
-
-function wpse_50092_script_enqueuer() {
+function show_metabox() {
     global $current_screen;
-    if('page' != $current_screen->id) return;
-
-    ?>
+    if('page' != $current_screen->id) return; ?>
         <script type="text/javascript">
         jQuery(document).ready( function($) {
 
             /**
              * Adjust visibility of the meta box at startup
             */
-            if($('#page_template').val() == 'page-portfolio.php') {
-                // show the meta box
-                $('#postimagediv').show(); 
-                $('#Information').show();
+	    $z='<?php echo $this->DB_field;?>';
+	    $x=$z+'.php';
+	    $y='#'+$z+'div';
+	    
+	    console.log('x'+$x+'y'+$y);
+	    if($('#page_template').val() === $x) {
+                $($y).show();
             } else {
-                // hide your meta box
-                $('#Information').hide();
+                $($y).hide();
             }
 
             // Debug only
@@ -190,13 +145,18 @@ function wpse_50092_script_enqueuer() {
              * Live adjustment of the meta box visibility
             */
             $('#page_template').live('change', function(){
-                    if($(this).val() == 'page-portfolio.php') {
+	    $z='<?php echo $this->DB_field;?>';
+	    $x=$z+'.php';
+	    $y='#'+$z+'div';
+	   
+	   if($(this).val() == $x) {
                     // show the meta box
-                   $('#postimagediv').show(); 
-                $('#Information').show();
+           	 console.log('lika med ska visa');
+		 $($y).show();
                 } else {
                     // hide your meta box
-                    $('#Information').hide();
+           	 console.log('inte lika med ska intevisa' + $y);
+                    $($y).hide();
                 }
 
                 // Debug only
@@ -210,4 +170,4 @@ function wpse_50092_script_enqueuer() {
 //load_plugin_textdomain('kobotolo', false, basename( dirname( __FILE__ ) ) . '/languages' );
 //register_activation_hook( __FILE__, array( 'Cls_Meta', 'meta_install' ) );
 
-?>
+}?>
