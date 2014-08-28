@@ -69,8 +69,10 @@ function kobotolo_entry_content( ) {
 /*****************************************************************************
 ********************** Entry thumbnail ****************************************
 ****************************************************************************/
-add_action( 'entry_thumbnail', 'kobotolo_entry_thumbnail', 10,1 );
-function kobotolo_entry_thumbnail( $portfolio_nr=3) {
+add_action( 'entry_thumbnail', 'kobotolo_entry_thumbnail', 10,2 );
+function kobotolo_entry_thumbnail( $portfolio_nr=3, $link='') {
+    //echo 'entry thumbnail';
+    
     if( has_post_thumbnail() && !is_single()&& get_post_type()=='post' ) : ?>
         <br>
         <div class="col-md-3">
@@ -78,22 +80,18 @@ function kobotolo_entry_thumbnail( $portfolio_nr=3) {
                 <?php the_post_thumbnail(); ?>
             </a>
         </div>
-    <?php elseif (get_post_type()=='portfoliok' ) : ?> 
+    <?php elseif (get_post_type()=='portfolio_kobotolo' ) : 
+	if ($link=='') {?> 
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                <?php //the_post_thumbnail(); 
-                switch ($portfolio_nr) {
-		    case 3:
-			the_post_thumbnail( 'portfolio_3', array( 'class' => 'portfolio-image' ) ); 
-			break;
-		    case 4:
-			the_post_thumbnail( 'portfolio_4', array( 'class' => 'portfolio-image' ) ); 
-			break;
-		    case 5:
-			the_post_thumbnail( 'portfolio_5', array( 'class' => 'portfolio-image' ) ); 
-			break;
-		} ?>
-            </a> 
-<?php         endif; ?>
+	<?php }
+	else {?>
+            <a href="<?php echo $link ?>" title="<?php the_title_attribute(); ?>">
+	<?php } ?>
+	    <?php //the_post_thumbnail(); 
+		    $i= get_the_post_thumbnail( get_the_ID(),'portfolio_'.$portfolio_nr, array( 'class' => 'portfolio-image' ) ); 
+		   print_r( $i);		    ?>
+	    </a> 
+	<?php         endif; ?>
 <?php }
 
 
@@ -108,3 +106,27 @@ function kobotolo_read_more_custom_excerpt( $text ) {
     }
     return $excerpt;
 }
+function make_term_button($t,$parentid="") {
+    /* Filter buttons */
+    $s=get_term_children( $t->term_id, 'portfolio_categories'); 
+    if (count($s)>0) {
+	foreach ($s as $t2) {   
+    	    $term = get_term_by( 'id', $t2, 'portfolio_categories');?>
+	<?php    make_term_button($term,'tag177');
+	} 
+    }
+    else {?>
+	<button class=" tag<?php echo $t->term_id.' '.$parentid;?> " id="tag<?php echo $t->term_id;?>" name ="<?php echo $t->name;?>"><?php echo $t->name;?></button>	
+    <?php }
+}
+    
+
+function make_term_tag($t,$parentid="") {
+    /* Filter buttons */
+    echo ' tag'.$t->term_id;
+    if ($t->parent>0) {
+	$term = get_term_by( 'id', $t->parent, 'portfolio_categories');
+    	make_term_tag($term); 
+    }
+}
+    
