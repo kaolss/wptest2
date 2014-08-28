@@ -14,10 +14,12 @@ class Cls_Meta {
     private $Meta_fields_text;
     private $Meta_fields_area;
     private $Meta_fields_special;
-    public function __construct($check, $text, $textarea, $DB_field, $special=''){
+    private $Type;
+    public function __construct($type, $check, $text, $textarea, $DB_field, $special=''){
 	add_action('admin_head', array( $this, 'show_metabox'));
         add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
         add_action( 'save_post', array( $this, 'save' ) );		
+        $this->Type=$type;
         $this->Meta_fields_check=$check;
         $this->Meta_fields_area=$textarea;
         $this->Meta_fields_text=$text;
@@ -25,15 +27,29 @@ class Cls_Meta {
         $this->Meta_fields_special=$special;    
     }
     public function add_meta_box() {
-        add_meta_box(
+	echo 'add_meta_box';
+        switch ($this->Type) {
+	    case 'post_type':
+		add_meta_box(
+                 $this->DB_field.'div'
+	        ,__( 'Portfolio Settings', 'txt_KoBoToLo' )
+                ,array( $this, 'render_meta_box_content' )
+                ,'portfolio_kobotolo'
+                ,'normal'
+                ,'high');
+		break;
+	    case 'page':
+	case 'post_type':
+		add_meta_box(
                  $this->DB_field.'div'
 	        ,__( 'Portfolio Settings', 'txt_KoBoToLo' )
                 ,array( $this, 'render_meta_box_content' )
                 ,'page'
                 ,'normal'
-                ,'high'
-        );
-    }
+                ,'high');	
+    	
+	} 
+	}
     function Meta_install() {    }
 
     public function save( $post_id ) {
@@ -78,7 +94,7 @@ class Cls_Meta {
 	/*********************** Textareaor ***********************************/
 	foreach ($this->Meta_fields_area as $key=>$field) {
 	    echo 'field';print_r($field);echo '<br>';
-	    if (isset($value[0][$key])) $x=$value[0][$key]; else $x=$field[1];
+	    if (isset($value[0][$key])) $x=$value[0][$key]; else $x=$field[1]; ?>
 	    <label for="<?php echo $key;?>"><?php _e( $field[0], 'kobotolo' );?></label>
 	    <textarea id="<?php echo $this->DB_field.'['.$key; ?>]"  
 		wrap="hard" name="<?php echo $this->DB_field.'['.$key; ?>]"  
@@ -117,7 +133,29 @@ class Cls_Meta {
 
 function show_metabox() {
     global $current_screen;
-    if('page' != $current_screen->id) return; ?>
+    print_r($current_screen->id);
+    if (get_post_type()==$this->DB_field) {echo 'xxxxxxxxxxxxxxxxxxxxxxxx';
+    if($this->DB_field == $current_screen->id){  
+	echo "\npost typ";?>
+        <script type="text/javascript">
+        jQuery(document).ready( function($) {
+
+            /**
+             * Adjust visibility of the meta box at startup
+            */
+	    $z='<?php echo $this->DB_field;?>';
+	    $x=$z+'.php';
+	    $y='#'+$z+'div';
+	    
+	    console.log('x'+$x+'y'+$y);
+                $($y).show();
+	    });
+		    </script>
+    <?php 
+   return; 
+}}
+?>
+<?php    if('page' != $current_screen->id) return; ?>
         <script type="text/javascript">
         jQuery(document).ready( function($) {
 
