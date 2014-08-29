@@ -7,17 +7,18 @@
  */
 
 require_once( dirname( __FILE__ ) . '/post_functions.php' );
-require_once( dirname( __FILE__ ) . '/kobotolo_settings.php' );
+//require_once( dirname( __FILE__ ) . '/kobotolo_settings.php' );
 require_once( dirname( __FILE__ ) . '/portfolio.php' );
 //require_once( dirname( __FILE__ ) . '/portfolio2.php' );
 require_once( dirname( __FILE__ ) . '/kobotolo_tax.php' );
+require_once( dirname( __FILE__ ) . '/cls_menu.php' );
 
 add_action( 'wp_enqueue_scripts', 'load_fontawesome_style', 999 );
 function load_fontawesome_style() {
     wp_enqueue_style( 'afn-font-awesome', get_bloginfo( 'stylesheet_directory' ) . '/fonts/font-awesome.min.css', array(), '4.0.3' );
 }
 
-add_filter( 'wp_nav_menu_items', 'kobotolo_menu', 10, 2 );
+//add_filter( 'wp_nav_menu_items', 'kobotolo_menu', 10, 2 );
 function kobotolo_menu($menu, stdClass $args) {
     $args = (array)$args;   
     if ( 'header-menu' == $args['theme_location']  ) {?>
@@ -62,8 +63,7 @@ add_action( 'init', 'kobotolo_menus' );
 function kobotolo_menus() {
   register_nav_menus(
     array(
-      'header-menu' => __( 'Header Menu' ),
-      'extra-menu' => __( 'Extra Menu' )
+      'primary' => __( 'Header Menu' )
     )
   );
   kobotolo_custom_post_type();
