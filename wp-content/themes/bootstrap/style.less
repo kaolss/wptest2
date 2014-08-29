@@ -14,27 +14,63 @@ This simple theme was built using the example Bootstrap theme "Basic marketing s
 */
 
 
-
 @inner_padding: 15px;
+@col_3 :33%;
+@col_4 :25%;
+@col_5 :20%;
+@col_ipad :50%;
+@col_mob :90%;
+@col_add :1%;
 
 
 #portfolio {     
+        background:orange;
+        h2,a {color:red; font-size:20px;};
         .portfolio-item.post-3 { width: 33%; }
         .portfolio-item.post-4 { width: 25%; }
         .portfolio-item.post-5 { width: 20%; }
         .grid-sizer { width: 33%; }
-        .portfolio-item.post-3:hover  { margin-left:-3%;margin-top:-6%;width:39%;border:1px grey solid;background:whitesmoke;z-index:100;transition: ease 0.5s all; }
-        .portfolio-item.post-4:hover  { margin-left:-3%;margin-top:-6%;width:31%;border:1px grey solid;background:whitesmoke;z-index:100; }
-        .portfolio-item.post-5:hover  { margin-left:-3%;margin-top:-6%;width:26%;border:1px grey solid;background:whitesmoke;z-index:100; }
+        .portfolio-item:hover  {
+            border:1px grey solid;
+            background:whitesmoke;
+            z-index:100;
+            transition: ease 0.5s all; 
+            margin-left:-@col_add;
+            margin-top:-2*@col_add;
+        }
+ 
+        .portfolio-item.post-3:hover  { 
+            width:@col_3+2*@col_add;
+        }
+        .portfolio-item.post-4:hover  { 
+            width:@col_4+2*@col_add;
+        }
+        .portfolio-item.post-5:hover  { 
+            width:@col_5+2*@col_add;
+        }
         .portfolio-item:hover >.text { display:block;padding:10px;}
     .text { display:none; }
-    .img {width:23%;padding:0;margin:0;}
+    img.portfolio-image {max-width:100%;height:auto;}
     #column-width-demo2 .item.w2 { width: 40%; }
 }
 
-img.portfolio-image.wp-post-image {max-width:100%;height:auto;padding:0;margin:0;}
+@media (max-width: 767px) {
+#portfolio {     
+        margin-right:15px;
+        .portfolio-item.post-3 { width: @col_ipad; }
+        .portfolio-item.post-4 { width: @col_ipad; }
+        .portfolio-item.post-5 { width: @col_ipad; }
+        .grid-sizer { width: 33%; }
+        .portfolio-item.post-3:hover, 
+        .portfolio-item.post-4:hover, 
+        .portfolio-item.post-5:hover  { 
+            width:@col_ipad+2*@col_add;
+         }
+    }
+}
+
 .sticky {
-    background:red;
+    background:blue;
     padding:15px;
 }
 
@@ -62,9 +98,9 @@ article img {
 
 
 .site-inner {
-    padding-left: @inner_padding;
+/*    padding-left: @inner_padding;
     padding-right: @inner_padding;
-}
+*/}
 
 .row.before_footer {
     margin-left: -@inner_padding;
@@ -94,5 +130,5 @@ article img {
 .entry-content{
 }
 .site-container {
-    background: whitesmoke;
+/*    background: whitesmoke;*/
 }

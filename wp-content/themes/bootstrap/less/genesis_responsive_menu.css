@@ -1,0 +1,223 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/*********** Both mobile and desktop **************/
+/* line 25, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\0000325}}
+.menu-primary a {
+  display: block;
+  padding-left: 10px;
+  color: #ffffff;
+}
+/* line 30, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\0000330}}
+.menu-primary a:hover {
+  text-decoration: none;
+}
+/*********** rememberNav **************/
+/* line 36, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\0000336}}
+#rememberNav {
+  /***************** sub menu **************/
+}
+/* line 37, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\0000337}}
+#rememberNav .menu-primary {
+  display: block !important;
+  height: auto;
+}
+/* line 41, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\0000341}}
+#rememberNav nav {
+  background: #000000;
+  padding: 0;
+  height: 90px;
+}
+/* line 47, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\0000347}}
+#rememberNav #menu-mobile {
+  display: none;
+  height: 0;
+  height: 90px;
+}
+/* line 52, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\0000352}}
+#rememberNav .menu-item {
+  line-height: 90px;
+  height: 90px;
+  float: left;
+}
+/* line 56, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\0000356}}
+#rememberNav .menu-item a {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/* line 60, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\0000360}}
+#rememberNav .menu-item a:hover {
+  background: #008000;
+  color: #ffffff;
+}
+/* line 66, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\0000366}}
+#rememberNav .menu-item:hover > .sub-menu {
+  left: auto;
+  opacity: 1;
+}
+/* line 70, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\0000370}}
+#rememberNav .sub-menu {
+  position: absolute;
+  left: -999px;
+}
+/* line 73, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\0000373}}
+#rememberNav .sub-menu .menu-item a {
+  line-height: 40px;
+  height: 40px;
+  width: 200px;
+  background: #ffff00;
+  color: #000000;
+}
+/* line 81, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\0000381}}
+#rememberNav .sub-menu a:hover {
+  color: #ffffff;
+  background: #008000;
+}
+/* line 86, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\0000386}}
+#rememberNav > img {
+  float: left;
+  padding-top: 15px;
+  padding-top: 1.5rem;
+}
+/*************** offcanvas ******************/
+/* line 94, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\0000394}}
+div#offcanvas {
+  position: fixed;
+  width: 100%;
+}
+/* line 97, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\0000397}}
+div#offcanvas nav {
+  height: 100px;
+  line-height: 100px;
+  background: #000000;
+}
+/* line 103, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\00003103}}
+div#offcanvas .sub-menu,
+div#offcanvas .sub-menu a {
+  width: 100%;
+}
+/* line 107, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\00003107}}
+div#offcanvas a:hover {
+  background: #008000;
+  color: #ffffff;
+}
+/* line 111, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\00003111}}
+div#offcanvas #menu-mobile {
+  display: block;
+}
+/* line 114, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\00003114}}
+div#offcanvas .menu-item-has-children {
+  height: auto!important;
+}
+/* line 117, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\00003117}}
+div#offcanvas .menu-item {
+  height: 40px;
+  line-height: 40px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  overflow: hidden;
+}
+/* line 124, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\00003124}}
+div#offcanvas .sub-menu {
+  padding-left: 30px;
+  left: inherit;
+  opacity: 1;
+  position: relative;
+}
+/* line 130, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\00003130}}
+div#offcanvas a,
+div#offcanvas li {
+  background: none;
+  width: 100%;
+  border: none;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+/* line 138, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\00003138}}
+div#offcanvas .menu-primary {
+  width: 0px;
+  height: 100vh;
+  padding-left: 0;
+  background: #000000;
+  overflow: hidden;
+  transition: width 1s ease;
+  position: fixed;
+}
+/* line 147, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\00003147}}
+div#offcanvas #menu-mobile {
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-family: Lato, sans-serif;
+  font-size: 18px;
+  font-size: 1.8rem;
+  background-image: url("../images/logo.png");
+  background-position: 90% center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  padding-left: 5%;
+}
+/* line 160, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\00003160}}
+div#offcanvas #menu-mobile:before {
+  content: "\2261 \0020 Meny";
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+/* line 166, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\00003166}}
+div#offcanvasclear {
+  height: 100px;
+}
+/* line 172, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\00003172}}
+#offcanvas .menu-primary img,
+#offcanvas li.menu-item.menu-right {
+  display: none;
+}
+/* line 178, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\00003178}}
+#offcanvas nav-primary .menu-item,
+#offcanvas .nav-primary ul,
+#offcanvas .nav-primary a,
+#offcanvas .nav-primary .sub-menu,
+#offcanvas .nav-primary .sub-menu a {
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+}
+/***************** Site container *******************/
+/* line 189, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\less\genesis_responsive_menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/less\/genesis_responsive_menu\.less}line{font-family:\00003189}}
+.site-container {
+  transition: margin-left 1s ease;
+  width: 100%;
+  overflow: hidden;
+}

@@ -13,35 +13,36 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <div class="box site-container">	
+    <div class="container-fluid">	
         <div class="site-header">	
-            <?php wp_nav_menu( array(
-                'container'       => 'nav',
-                'menu_class'      => 'menu-primary',
-                'container_class' => 'nav-primary',
-                'theme_location'  => 'header-menu'
-            ));?>
-        </div>
-        <?php if (is_front_page()) {?>
-            <?php dynamic_sidebar( 'below_nav' );
-        } ?>
-        <div class="container">
-            <?php /*<div class="navbar navbar-inverse navbar-fixed-top">
-<div class="navbar-inner">
+            <nav class="navbar navbar-default" role="navigation">
   <div class="container">
-    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </a>
-    <a class="brand" href="<?php echo site_url(); ?>"><?php bloginfo('name'); ?></a>
-    <div class="nav-collapse collapse">
-      <ul class="nav">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
 
-          <?php wp_list_pages(array('title_li' => '', 'exclude' => 4)); ?>
+        <?php
+            wp_nav_menu( array(
+                'menu'              => 'primary',
+                'theme_location'    => 'primary',
+                'depth'             => 2,
+                'container'         => 'div'
+           /*     'container_class'   => 'collapse navbar-collapse container',
+	        'container_id'      => 'bs-example-navbar-collapse-1',
+                'menu_class'        => 'nav navbar-nav container',
+                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                'walker'            => new wp_bootstrap_navwalker())
+            */
+	      ));
+        ?>
+    </div>
+</nav>
+	</div>
+	
 
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div>
-</div>
-</div> */
