@@ -7,7 +7,7 @@
  */
 
 get_header(); 
-echo 'single efter test karin007'; ?>
+echo 'single efter test karin007 och igen'; ?>
 
 
 <div class="container-fluid">
