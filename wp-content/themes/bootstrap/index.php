@@ -5,8 +5,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-get_header(); ?>
-<div class="row site-inner">
+get_header(); 
+echo 'index.php';?>
+<div class="container-fluid">
+    <div class="container">
+    <div class="row site-inner">
   <div class="col-md-8">
 	<?php if ( have_posts() ) : 
 		while ( have_posts() ) : the_post(); ?>
@@ -26,5 +29,6 @@ get_header(); ?>
 	<?php get_sidebar(); ?>  	
   </div>
 </div>
+	</div></div>
 
 <?php get_footer(); ?>

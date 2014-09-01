@@ -9,6 +9,8 @@
 get_header(); 
 echo 'single'; ?>
 
+<div class="container-fluid">
+    <div class="container">
 <div class="row site-inner">
   <div class="col-md-8">
 	<?php if ( have_posts() ) : 
@@ -29,6 +31,7 @@ echo 'single'; ?>
   <div class="col-md-4 col-xs-12">
 	<?php get_sidebar(); ?>  	
   </div>
+</div>
 </div>
 
 <?php get_footer(); ?>
