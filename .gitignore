@@ -63,3 +63,4 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 /nbproject/private/
+/wp-content/nbproject/private/
