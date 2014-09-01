@@ -7,7 +7,7 @@
  */
 
 get_header(); 
-echo 'single'; ?>
+echo 'single efter test'; ?>
 
 <div class="container-fluid">
     <div class="container">
