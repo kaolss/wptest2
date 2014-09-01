@@ -25,8 +25,10 @@ $Pk[] = '';?>
     <div class="filter_buttons">
 	<button id="alla" name="Alla">Alla</button>
 	<?php foreach ($terms as $t) {
-	    array_push($Pk, $t->term_id);
-	    make_term_button($t);
+	    if ($t->count>1) {
+                array_push($Pk, $t->term_id);
+                make_term_button($t);
+            }
 	} ?>
     </div>
     <?php if ( have_posts() ) : 
