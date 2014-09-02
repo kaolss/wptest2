@@ -22,7 +22,7 @@ echo 'index.php';?>
 		</article>
            <?php endwhile; 
 	else: ?>
-		<p><?php _e('Sorry, this page does not exist.'); ?></p>
+		<p><?php _e('Sorry, this page does not exist.','txt_kobotolo'); ?></p>
 	<?php endif; ?>
   </div>
   <div class="col-md-4">
