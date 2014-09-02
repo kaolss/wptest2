@@ -1,0 +1,216 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: KoBoToLo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-02 14:08+0100\n"
+"PO-Revision-Date: 2014-09-02 14:12+0100\n"
+"Last-Translator: Karin <karin.olsson@larorikt.se>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__e;_x;__x;_e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: C:\\xampp5\\htdocs\\wputv\\wptest2\\wp-content\\themes\\bootstrap\n"
+"X-Poedit-SearchPath-1: C:\\xampp5\\htdocs\\wputv\\wptest2\\wp-content\\themes\\bootstrap\\lib\n"
+"X-Poedit-SearchPath-2: .\n"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/comments.php:24
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Posten är skyddat av ett passord. Ange passordet för att se kommentarer."
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/comments.php:39
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/comments.php:52
+msgid "&#8249; Older comments"
+msgstr ""
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/comments.php:41
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/comments.php:54
+msgid "Newer comments &#8250;"
+msgstr ""
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/comments.php:66
+msgid "Pings&#47;Trackbacks"
+msgstr ""
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/comments.php:69
+#, php-format
+msgid "%1$d %2$s for \"%3$s\""
+msgstr ""
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/comments.php:82
+msgid "Name"
+msgstr ""
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/comments.php:84
+msgid "E-mail"
+msgstr ""
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/comments.php:86
+msgid "Website"
+msgstr ""
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/index.php:25
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/kobotolo_portfolio.php:42
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/kobotolo_portfolio2.php:65
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/page.php:23
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/single.php:28
+msgid "Sorry, this page does not exist."
+msgstr "Sidan finns tyvärr inte"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/init.php:27
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:23
+msgid "Add New Portfolio"
+msgstr "Lägg till ny portfolio"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/init.php:28
+msgid "Show sidebar?"
+msgstr "Visa sidebar?"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/init.php:75
+msgid "portfolio"
+msgstr "portfolio"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/init.php:89
+msgid "Header Menu"
+msgstr "Huvud meny"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/KoBoToLo
+#: -
+#: Meta.php:35
+#: Meta.php:44
+msgid "Portfolio Settings"
+msgstr "Inställningar portfolio"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:16
+msgid "Portfolio items"
+msgstr "Portfolio poster"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:17
+msgid "Portfolio item"
+msgstr "Portfolio"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:18
+msgid "Portfolio"
+msgstr "Portfolio"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:19
+msgid "Parent Item:"
+msgstr "Förälder:"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:20
+msgid "All portfolio items"
+msgstr "Alla portfolio poster"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:21
+msgid "View Item"
+msgstr ""
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:22
+msgid "Add New Portfolio Post"
+msgstr "Lägg till portfolio"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:24
+msgid "Edit Item"
+msgstr "Ändra posten"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:25
+msgid "Update Item"
+msgstr "Uppdatera posten"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:26
+msgid "Search Item"
+msgstr "Sök"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:27
+msgid "Not found"
+msgstr "Inga poster hittade"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:28
+msgid "Not found in Trash"
+msgstr "Inga poster hittade i papperskorgen"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:31
+msgid "Post type for portfolio items"
+msgstr "post typ"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:53
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:54
+msgid "Portfolio filter"
+msgstr "Filter för portfolio"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:55
+msgid "Search Portfolio filter"
+msgstr "Sök filter"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:56
+msgid "Popular filters"
+msgstr "Populära filter"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:57
+msgid "All filters"
+msgstr "Alla filter"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:58
+msgid "Parent filter"
+msgstr "Förälder"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:59
+msgid "Parent Filter:"
+msgstr "Förälder:"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:60
+msgid "Edit Filter"
+msgstr "Ändra"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:61
+msgid "Update Filter"
+msgstr "Uppdatera"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:62
+msgid "Add New Filter"
+msgstr "Skapa filter"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:63
+msgid "New Item Name"
+msgstr "Namn på nytt filter"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:64
+msgid "Separate Filters with commas"
+msgstr "Separera med komma"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:65
+msgid "Add or remove Filter"
+msgstr "sv"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:66
+msgid "Choose from the most used Filter"
+msgstr "Välj från de mest använda"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/kobotolo_tax.php:67
+msgid "Portfolio Filter"
+msgstr "Portfolio filter"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/portfolio.php:13
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\lib/portfolio.php:13
+msgid "How many images in rows (3, 4 eller 5)"
+msgstr "Många"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/portfolio.php:16
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\lib/portfolio.php:16
+msgid "Select filters for portfolio"
+msgstr "Välj filter för portfoliosidan"
+
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap/lib/portfolio.php:22
+#: C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\lib/portfolio.php:22
+msgid "Link on click"
+msgstr "Länk vid klick"
+
+#~ msgid "Add New xxx"
+#~ msgstr "Lägg till"
+
+#~ msgid "New PFilter"
+#~ msgstr "Nytt filter"
+
+#~ msgid "Add Newxxxxxxxxxxxxxxxxxxxxxxx Filter"
+#~ msgstr "hrjhopp"
