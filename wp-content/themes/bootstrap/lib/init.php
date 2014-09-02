@@ -7,12 +7,15 @@
  */
 
 require_once( dirname( __FILE__ ) . '/post_functions.php' );
-//require_once( dirname( __FILE__ ) . '/kobotolo_settings.php' );
-require_once( dirname( __FILE__ ) . '/portfolio.php' );
-//require_once( dirname( __FILE__ ) . '/portfolio2.php' );
-require_once( dirname( __FILE__ ) . '/kobotolo_tax.php' );
-require_once( dirname( __FILE__ ) . '/cls_menu.php' );
 
+add_action('after_setup_theme', 'my_theme_setup');
+function my_theme_setup(){
+    $x= load_theme_textdomain('txt_kobotolo', get_template_directory() . '/languages');
+    get_template_part('lib/kobotolo_tax');
+    get_template_part('lib/KoBoToLo - Meta');
+    get_template_part('lib/portfolio');
+    get_template_part('lib/cls_menu');
+}
 add_action( 'wp_enqueue_scripts', 'load_fontawesome_style', 999 );
 function load_fontawesome_style() {
     wp_enqueue_style( 'afn-font-awesome', get_bloginfo( 'stylesheet_directory' ) . '/fonts/font-awesome.min.css', array(), '4.0.3' );
@@ -47,11 +50,7 @@ wp_enqueue_script('jquery');
 add_image_size('portfolio_3', 500, 500, true);
 add_image_size('portfolio_4', 400, 400, true);
 add_image_size('portfolio_5', 300, 300, true);
-//add_filter('image_size_names_choose', 'display_image_sizes');
-function display_image_sizes($sizes) {
-   $sizes['portfolio'] = __( 'portfolio' );
-   return $sizes;
-}
+
 
 add_theme_support( 'html5' );
 add_theme_support( 'post-thumbnails');
@@ -63,7 +62,7 @@ add_action( 'init', 'kobotolo_menus' );
 function kobotolo_menus() {
   register_nav_menus(
     array(
-      'primary' => __( 'Header Menu' )
+      'primary' => __( 'Header Menu', 'txt_kobotolo' )
     )
   );
   kobotolo_custom_post_type();
