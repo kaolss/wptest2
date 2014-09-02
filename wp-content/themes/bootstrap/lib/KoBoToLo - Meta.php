@@ -39,7 +39,6 @@ class Cls_Meta {
                 ,'high');
 		break;
 	    case 'page':
-	case 'post_type':
 		add_meta_box(
                  $this->DB_field.'div'
 	        ,__( 'Portfolio Settings', 'txt_KoBoToLo' )
@@ -85,7 +84,7 @@ class Cls_Meta {
 	    $text='';
 	    if (isset($value[0][$key])) $x=$value[0][$key]; else $x=$field[1];
 		if ($x=='1') {$text=" checked";} ?>
-		<label for="<?php echo $key;?>"><?php _e( $field[0], 'kobotolo' );?></label>
+		<label for="<?php echo $key;?>"><?php echo  $field[0];?></label>
 		    <input type="checkbox" value='1' id="<?php echo $this->DB_field.'['.$key; ?>]" 
 			name="<?php echo $this->DB_field.'['.$key; ?>]" 
 		    <?php echo $text; ?>><br/>		
@@ -95,7 +94,7 @@ class Cls_Meta {
 	foreach ($this->Meta_fields_area as $key=>$field) {
 	    echo 'field';print_r($field);echo '<br>';
 	    if (isset($value[0][$key])) $x=$value[0][$key]; else $x=$field[1]; ?>
-	    <label for="<?php echo $key;?>"><?php _e( $field[0], 'kobotolo' );?></label>
+	    <label for="<?php echo $key;?>"><?php echo $field[0];?></label>
 	    <textarea id="<?php echo $this->DB_field.'['.$key; ?>]"  
 		wrap="hard" name="<?php echo $this->DB_field.'['.$key; ?>]"  
 		cols="35" rows="2"><?php echo $x;?></textarea><br/>
@@ -104,7 +103,7 @@ class Cls_Meta {
 	/*********************** Text ***********************************/
 	foreach ($this->Meta_fields_text as $key=>$field) {
 	    if (isset($value[0][$key])) $x=$value[0][$key]; else $x=$field[1];?>
-	    <label for="<?php echo $key;?>"><?php _e( $field[0], 'kobotolo' );?></label>
+	    <label for="<?php echo $key;?>"><?php  $field[0];?></label>
 		<input type="text" size="35" 
 		id="<?php echo $this->DB_field.'['.$key; ?>]"
 		name="<?php echo $this->DB_field.'['.$key; ?>]"value="<?php echo $x;?>" /><br>
