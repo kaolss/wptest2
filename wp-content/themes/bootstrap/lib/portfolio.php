@@ -5,21 +5,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-require_once( dirname( __FILE__ ) . '/KoBoToLo - Meta.php' );
+//require_once( dirname( __FILE__ ) . '/KoBoToLo - Meta.php' );
 
     $Meta_fields_check = 
-	array ('usesidebar'=>array('Visa sidebar på sidan?',0));
+	array ('usesidebar'=>array(__('Show sidebar?','txt_kobotolo'),0));
     $Meta_fields_text = 
-	array ('number'=>array('Hur många bilder per rad (3, 4 eller 5)',3));
+	array ('number'=>array(__('How many images in rows (3, 4 eller 5)','txt_kobotolo'),3));
     $Meta_fields_textarea = 
 	array ();
-    $Meta_fields_special = array ('portfolio_categories'=> array('Taxonomy','Välj filter för portfolion'));
+    $Meta_fields_special = array ('portfolio_categories'=> array('Taxonomy',__('Select filters for portfolio','txt_kobotolo')));
      
     $Meta = new Cls_Meta('page',$Meta_fields_check, $Meta_fields_text, $Meta_fields_textarea, 'kobotolo_portfolio', $Meta_fields_special);  
 
     $Meta_fields_check2 = array();
     $Meta_fields_text2 = 
-	array ('link'=>array('Länk ()',''));
+	array ('link'=>array(__('Link on click','txt_kobotolo'),''));
     $Meta_fields_textarea2 = 
 	array ();
     $Meta_fields_special2 = array ();
