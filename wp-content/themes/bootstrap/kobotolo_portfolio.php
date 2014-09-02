@@ -39,7 +39,7 @@ $Pk[] = '';?>
 	    </div>
 	<?php endwhile; 
     else: ?>
-	<p><?php _e('Sorry, this page does not exist.'); ?></p>
+	<p><?php _e('Sorry, this page does not exist.',txt_KoBoToLo); ?></p>
     <?php endif; ?>
 
     <?php $args = array(
