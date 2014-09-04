@@ -48,8 +48,18 @@ function kobotolo_loop_header( ) { ?>
             <?php echo category_description();
         }
 	else if (is_archive()) { ?>
-            <h1>Arkiv för</h1>
-	<?php } ?>
+           <h1 class="page-title">
+                <?php if ( is_day() ) : ?>
+                    <?php printf( __( 'Daily Archives: <span>%s</span>', 'txt_kobotolo' ), get_the_date() ); ?>
+                <?php elseif ( is_month() ) : ?>
+                    <?php printf( __( 'Monthly Archives: <span>%s</span>', 'txt_kobotolo' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'txt_kobotolo' ) ) ); ?>
+                <?php elseif ( is_year() ) : ?>
+                    <?php printf( __( 'Yearly Archives: <span>%s</span>', 'txt_kobotolo' ), get_the_date( _x( 'Y', 'yearly archives date format', 'txt_kobotolo' ) ) ); ?>
+                <?php else : ?>
+                    <?php _e( 'Blog Archives', 'twentyten' ); ?>
+                <?php endif; ?>
+            </h1>
+        <?php	} ?>
     </div>
 <?php }
 /*****************************************************************************
@@ -99,10 +109,10 @@ add_filter( 'get_the_excerpt', 'kobotolo_read_more_custom_excerpt' );
 function kobotolo_read_more_custom_excerpt( $text ) {
     if (strpos( $text, '[&hellip;]') ) {
        $excerpt = str_replace( '[&hellip;]',
-	  '<p><a href="' .get_permalink().'" class="btn btn-sm btn-primary">Läs mer <i class="fa fa-arrow-right"></i></a>', $text );
+	  '<p><a href="' .get_permalink().'" class="btn btn-sm btn-primary">'. _e("Read more","txt_kobotolo").'<i class="fa fa-arrow-right"></i></a>', $text );
 		 }
     else {
-	$excerpt = $text . '<p><a href="' . get_permalink() . '"class="btn btn-sm btn-primary"><i class="fa fa-arrow-right"></i>Läs mer </a></p>';
+	$excerpt = $text . '<p><a href="' . get_permalink() . '" class="btn btn-sm btn-primary"><i class="fa fa-arrow-right"></i>'._e("Read more","txt_kobotolo").'</a></p>';
     }
     return $excerpt;
 }

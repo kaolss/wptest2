@@ -6,19 +6,23 @@
  * and open the template in the editor.
  */
 
-require_once( dirname( __FILE__ ) . '/post_functions.php' );
+
 
 add_action('after_setup_theme', 'my_theme_setup');
 function my_theme_setup(){
     $x= load_theme_textdomain('txt_kobotolo', get_template_directory() . '/languages');
+    get_template_part('lib/post_functions' );
     get_template_part('lib/kobotolo_tax');
     get_template_part('lib/KoBoToLo - Meta');
     get_template_part('lib/portfolio');
     get_template_part('lib/cls_menu');
+    get_template_part('lib/resonsive_menu');
+    
 }
 add_action( 'wp_enqueue_scripts', 'load_fontawesome_style', 999 );
 function load_fontawesome_style() {
-    wp_enqueue_style( 'afn-font-awesome', get_bloginfo( 'stylesheet_directory' ) . '/fonts/font-awesome.min.css', array(), '4.0.3' );
+    wp_enqueue_style( 'afn-font-awesome', get_stylesheet_directory_uri()  . '/fonts/font-awesome.min.css', array(), '4.0.3' );
+    wp_enqueue_style( 'menu', get_stylesheet_directory_uri()  . '/genesis_responsive_menu.css', array(), '4.0.3' );
 }
 
 //add_filter( 'wp_nav_menu_items', 'kobotolo_menu', 10, 2 );
@@ -41,7 +45,7 @@ function kobotolo_scripts()
 {
 wp_enqueue_script('jquery');
     wp_enqueue_script( 'bootstrapjs', get_bloginfo( 'stylesheet_directory' ) . '/bootstrap/js/bootstrap.js', array( 'jquery' ) );
-	wp_enqueue_script( 'init_carousel', get_bloginfo( 'stylesheet_directory' ) . '/lib/carousel.js', array( 'jquery' ) );
+    wp_enqueue_script( 'menu', get_bloginfo( 'stylesheet_directory' ) . '/lib/js/drop-down-nav.js', array( 'jquery' ) );
     wp_enqueue_style( 'bootstrap', get_bloginfo( 'stylesheet_directory' ) . '/bootstrap/css/bootstrap.css', array(), '4.0.3' );
     wp_enqueue_style( 'bootstrap-resp', get_bloginfo( 'stylesheet_directory' ) . '/bootstrap/css/bootstrap-responsive.css', array(), '4.0.3' );
 
@@ -55,7 +59,15 @@ add_image_size('portfolio_5', 300, 300, true);
 add_theme_support( 'html5' );
 add_theme_support( 'post-thumbnails');
 add_theme_support( 'custom-background' );
-add_theme_support( 'custom-header' );
+
+$args = array(
+	'flex-width'    => true,
+	'width'         => 980,
+	'flex-height'    => true,
+	'height'        => 200,
+	'default-image' => get_template_directory_uri() . '/images/header.jpg',
+);
+add_theme_support( 'custom-header', $args );
 add_post_type_support( 'post', 'excerpt' ); 
 
 add_action( 'init', 'kobotolo_menus' );

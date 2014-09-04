@@ -13,32 +13,33 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <div class="container-fluid">	
+    <div class="site-container container-fluid">	
         <div class="site-header">	
+            <?php $header_image = get_header_image();
+            if ( ! empty( $header_image ) ) { ?>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                   <img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="
+                <?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a><?php 
+                    
+            }?>
+            <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
             <nav class="navbar navbar-default" role="navigation">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
+                <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                   
 
         <?php
             wp_nav_menu( array(
-                'menu'              => 'primary',
-                'theme_location'    => 'primary',
+                'menu'              => 'main',
+                'theme_location'    => 'main',
                 'depth'             => 2,
-                'container'         => 'div'
-           /*     'container_class'   => 'collapse navbar-collapse container',
-	        'container_id'      => 'bs-example-navbar-collapse-1',
-                'menu_class'        => 'nav navbar-nav container',
-                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                'walker'            => new wp_bootstrap_navwalker())
-            */
+                'container'         => 'div',
+                'container_class'   => 'menu nav-primary menu-primary',
+	        'container_id'      => '',
+                'menu_class'        => 'menu-main menu-primary nav navbar-nav container'
+         
+             
+            
 	      ));
         ?>
     </div>

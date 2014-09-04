@@ -9,7 +9,7 @@
  * License: GPL2
  */
 
-//add_action( 'wp_head', 'ok_responsive_head' );
+add_action( 'wp_head', 'ok_responsive_head' );
 function ok_responsive_head (){
     $options = get_option('grm_css_data');
 	?>
