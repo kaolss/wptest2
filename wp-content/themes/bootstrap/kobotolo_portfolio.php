@@ -12,19 +12,19 @@ get_header();
 $meta = get_post_meta($post->ID, 'kobotolo_portfolio');
 $tag_meta = $meta[0]; 
 $nr=$tag_meta['number']?:3;
-$usesidebar=isset($tag_meta['usesidebar'])?:0;
+
 $terms=get_the_terms($post->ID,'portfolio_categories');
 $Pk[] = '';?>
-<div class="container"><div class="row">
-    <?php if ($usesidebar) { 
-      echo '<div class="col-md-8">';
-    } 
-    else {
-	echo '<div class="col-md-12">';       
-    }  ?>
-    <div class="filter_buttons">
+<<div class="site-inner">
+    <div class="container">
+	<?php do_action('sidebar_left'); ?>  	
+	<div class="col-md-8 main-content">
+	    
+	<div class="filter_buttons">
 	<button id="alla" name="Alla">Alla</button>
-	<?php foreach ($terms as $t) {
+	<?php 
+	if ($terms) 
+	    foreach ($terms as $t) {
 	    if ($t->count>1) {
                 array_push($Pk, $t->term_id);
                 make_term_button($t);
@@ -88,11 +88,7 @@ $Pk[] = '';?>
     } ?>
     </div>
 <?php wp_reset_postdata();
-  if ($usesidebar) { ?>
-  <div class="col-md-4">
-	<?php get_sidebar(); ?>  	
-  </div>
-<?php }?>
-</div></div>
+  do_action('sidebar_right'); ?>  	
+</div>
 
 <?php get_footer(); ?>
