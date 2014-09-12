@@ -7,20 +7,27 @@
  */
 ?>
 <div class="row before_footer">
-    <div class="col-md-4">
-        <?php dynamic_sidebar( 'footer_left' ); ?>
-     </div>	
-     <div class="col-md-4">
-        <?php dynamic_sidebar( 'footer_center' ); ?>
-     </div>	
-     <div class="col-md-4">
-        <?php dynamic_sidebar( 'footer_right' );?>
+    <div class="container">
+        <div class="col-md-4">
+	    <?php dynamic_sidebar( 'footer_left' ); ?>
+	</div>	
+	<div class="col-md-4">
+	    <?php dynamic_sidebar( 'footer_center' ); ?>
+	</div>	
+	<div class="col-md-4">
+	    <?php dynamic_sidebar( 'footer_right' );?>
+	</div>
+	<hr>
     </div>
 </div>
-<hr>
 <footer>
-  <p>© Company 2012</p>
+    <div class="container">
+	<div class="col-md-12">
+	<?php do_action('kobotolo_footer'); ?>
+	</div> <!-- /container -->
+    </div> <!-- /container -->
 </footer>
+
 <?php wp_footer(); ?>
 </div> <!-- /container -->
 </body>
