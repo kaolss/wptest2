@@ -5,32 +5,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//require_once( dirname( __FILE__ ) . '/KoBoToLo - Meta.php' );
 
-    $Meta_fields_check = 
-	array ('usesidebar'=>array(__('Show sidebar?','txt_kobotolo'),0));
-    $Meta_fields_text = 
-	array ('number'=>array(__('How many images in rows (3, 4 eller 5)','txt_kobotolo'),3));
-    $Meta_fields_textarea = 
-	array ();
-    $Meta_fields_special = array ('portfolio_categories'=> array('Taxonomy',__('Select filters for portfolio','txt_kobotolo')));
-     
-    $Meta = new Cls_Meta('page',$Meta_fields_check, $Meta_fields_text, $Meta_fields_textarea, 'kobotolo_portfolio', $Meta_fields_special);  
+$Meta_fields = array (
+    'number' =>array('type' =>'text'
+		,'label'=>__('How many images in rows (3, 4 eller 5)','txt_kobotolo')
+		,'default'=>'3')
+    ,'portfolio_categories'=> array('type'=>'special'
+		,'what'=>'Taxonomy'
+		,'label'=>__('Select filters for portfolio','txt_kobotolo')
+		,'default'=>''));     
+$Meta = new Cls_Meta('Portfolio page settings', 'page', $Meta_fields, 'kobotolo_portfolio');  
 
-    $Meta_fields_check2 = array();
-    $Meta_fields_text2 = 
-	array ('link'=>array(__('Link on click','txt_kobotolo'),''));
-    $Meta_fields_textarea2 = 
-	array ();
-    $Meta_fields_special2 = array ();
-     
-    $Meta2 = new Cls_Meta('post_type',$Meta_fields_check2, $Meta_fields_text2, $Meta_fields_textarea2, 'portfolio_kobotolo', $Meta_fields_special2);  
+$Meta_fields2 = array(
+    'link'=>array('type'=>'text'
+      , 'label'=>__('Link on click','txt_kobotolo')
+      ,'default'=>'vvvvvvv'));
+$Meta2 = new Cls_Meta('Portfolio settings','post_type',$Meta_fields2, 'portfolio_kobotolo');  
 
-
-
-// Hook into the 'init' action
-//add_action( 'init', 'custom_post_type', 0 );
-
-
-
-
+$Meta_fields3 = array (
+    'sidebar'=>array('type'=>'text'
+      ,'label'=>__('Place for sidebar','txt_kobotolo')
+      ,'default'=>'right'));
+$Meta3 = new Cls_Meta('Page settings', 'page',$Meta_fields3, 'page' );
