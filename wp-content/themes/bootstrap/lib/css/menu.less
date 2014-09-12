@@ -1,0 +1,213 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
+
+@nav_height: 90px;
+@nav_padding: 10px;
+@nav_bg: black;
+@nav_color: white;
+@nav_sm_bg: yellow;
+@nav_sm_color: black;
+@nav_sm_height: 40px;
+@nav_sm_width: 200px;
+@nav_hover_bg:blue;
+@nav_hover_color:purple;
+
+@off_height:100px;
+@off_meny_bg:black;
+@off_sm_height:40px;
+
+/*********** Both mobile and desktop **************/
+.menu-primary  {
+    a {
+        display: block;
+        padding-left:10px;        
+        color: @nav_color
+    }
+    a:hover{
+    text-decoration: none;
+    }
+}
+
+/*********** rememberNav **************/
+#rememberNav {
+    .menu-primary { 
+        display: block !important; 
+        height: auto;
+        list-style:none;
+     }
+    nav {
+        background: @nav_bg;
+        padding:0;
+        height:@nav_height;
+        border-top: 10px solid grey;
+}
+    .menu-right {
+        float:right;
+        padding-right:20px;
+    }
+    .menu-right a i {
+    line-height: inherit;
+    }
+    #menu-mobile {
+        display: none;
+        height: 0;
+        height:@nav_height;
+    }
+    .menu-item {
+        line-height: @nav_height;
+        height:@nav_height;
+        float:left;
+margin-top:-10px;        a {
+            padding-top:0;
+            padding-bottom:0;
+}
+    }
+    /***************** sub menu **************/
+    .menu-item.current-menu-item {
+        border-top: 10px solid @nav_hover_bg;
+            margin-top:-10px;
+      }
+        .menu-item:hover {
+            border-top: 10px solid @nav_hover_bg;/*@nav_hover_bg;*/
+            color: @nav_hover_bg;
+            margin-top:-10px;
+       }
+        .menu-item:hover >a {
+            margin-top:-10px;
+       }
+ .current-menu-item a {
+margin-top: -10px;
+}   .menu-item:hover > .sub-menu {
+        left: auto;
+    opacity: 1;
+    }
+    .sub-menu {
+        position: absolute;
+        left:-999px;
+        .menu-item a{
+            line-height: @nav_sm_height;
+            height:@nav_sm_height;
+            width: @nav_sm_width;
+            background:@nav_sm_bg;
+            color:@nav_sm_color;
+
+       }
+        a:hover {
+            color: @nav_hover_color;
+            background:@nav_hover_bg;
+        }
+    }
+    >img {
+        float: left;
+        padding-top:15px;
+        padding-top:1.5rem;
+    }
+
+}
+/*************** offcanvas ******************/
+div#offcanvas {
+    position: fixed;
+    width: 100%;
+    nav{
+        height:@off_height;
+        line-height:@off_height;
+        background:@nav_bg;
+    }
+
+    .sub-menu,
+    .sub-menu a{
+        width: 100%;
+    }
+    a:hover {
+        background:@nav_hover_bg;
+        color:@nav_hover_color;
+    }
+    #menu-mobile {
+        display: block;
+    }
+    .menu-item-has-children {
+        height: auto!important;
+    }
+    .menu-item {
+        height:@off_sm_height;
+        line-height:@off_sm_height;
+        padding-top:0px;
+        padding-bottom:0px;
+        overflow: hidden;
+     }
+     .sub-menu {
+            padding-left:30px;
+            left: inherit;
+            opacity: 1;
+            position: relative;
+        }
+        a,
+        li {
+            background: none;
+            width:100%;
+            border: none;
+            padding-top:0px;
+            padding-bottom:0px;
+        }
+     .menu-primary{        
+        width:0px;
+        height:100vh;
+        padding-left:0;
+        background: @off_meny_bg;
+        overflow: hidden;
+        transition:  width 1s ease;
+        position: fixed;
+    }
+    #menu-mobile {
+        color: white;
+        cursor: pointer;
+        display: block;
+        font-family: Lato, sans-serif;
+        font-size: 18px;
+        font-size: 1.8rem;
+        background-image: url("../images/logo.png");
+        background-position: 90% center;
+        background-size: 60%;
+        background-repeat: no-repeat;
+        padding-left:5%;
+        }
+        #menu-mobile:before {
+            content: "\2261 \0020 Meny";
+            vertical-align: middle; 
+            text-transform: uppercase;
+        }
+}
+div#offcanvasclear{
+    height:@off_height;
+}
+
+
+
+#offcanvas .menu-primary img,
+#offcanvas li.menu-item.menu-right {
+   display: none;
+}
+
+
+#offcanvas nav-primary  .menu-item,
+#offcanvas .nav-primary ul,
+#offcanvas .nav-primary  a,
+#offcanvas .nav-primary  .sub-menu,
+#offcanvas .nav-primary  .sub-menu a{
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+}
+ 
+/***************** Site container *******************/
+.site-container{
+    transition: margin-left 1s ease;
+    width: 100%;
+    overflow:hidden;
+
+}
