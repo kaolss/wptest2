@@ -7,6 +7,32 @@
  */
 
 /*****************************************************************************
+********************** Footer with copytight *********************************
+*****************************************************************************/
+add_action('kobotolo_footer', 'ok_footer_creds_text', 10);
+function ok_footer_creds_text() {
+    global $wpdb;
+    $query = $wpdb->prepare(
+    "SELECT min(post_date) FROM {$wpdb->posts} WHERE post_status = 'publish' AND post_type = '%s'",'post');
+
+    $result = strtotime($wpdb->get_var( $query ));
+    $output = date('Y', $result);
+
+	echo '<div class="creds">';
+	echo '<p>Copyright © '.$output.' - '.date('Y');
+	echo ' &middot; '.get_bloginfo();
+	echo '</p></div>';
+}
+
+/*****************************************************************************
+********************** Sidebar right ********************************************
+*****************************************************************************/
+function kobotolo_sidebar($position='') { ?>
+    <div class="col-md-4">left
+	anrop till sidebar<?php get_sidebar(); ?>  
+    </div><?php }
+
+/*****************************************************************************
 ********************** Entry data ********************************************
 *****************************************************************************/
 add_action('entry_data', 'kobotolo_entry_data', 10);
@@ -52,11 +78,13 @@ function kobotolo_loop_header( ) { ?>
                 <?php if ( is_day() ) : ?>
                     <?php printf( __( 'Daily Archives: <span>%s</span>', 'txt_kobotolo' ), get_the_date() ); ?>
                 <?php elseif ( is_month() ) : ?>
-                    <?php printf( __( 'Monthly Archives: <span>%s</span>', 'txt_kobotolo' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'txt_kobotolo' ) ) ); ?>
+                    <?php printf( __( 'Monthly Archives: <span>%s</span>', 'txt_kobotolo' ), 
+			get_the_date( _x( 'F Y', 'monthly archives date format', 'txt_kobotolo' ) ) ); ?>
                 <?php elseif ( is_year() ) : ?>
-                    <?php printf( __( 'Yearly Archives: <span>%s</span>', 'txt_kobotolo' ), get_the_date( _x( 'Y', 'yearly archives date format', 'txt_kobotolo' ) ) ); ?>
+                    <?php printf( __( 'Yearly Archives: <span>%s</span>', 'txt_kobotolo' ), 
+			get_the_date( _x( 'Y', 'yearly archives date format', 'txt_kobotolo' ) ) ); ?>
                 <?php else : ?>
-                    <?php _e( 'Blog Archives', 'twentyten' ); ?>
+                    <?php _e( 'Blog Archives', 'txt_kobotolo' ); ?>
                 <?php endif; ?>
             </h1>
         <?php	} ?>
