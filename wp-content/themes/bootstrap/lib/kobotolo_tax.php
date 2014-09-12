@@ -27,6 +27,7 @@ if ( ! function_exists('Kobotolo_custom_post_type') ) {
 		'not_found'           => __( 'Not found', 'txt_kobotolo' ),
 		'not_found_in_trash'  => __( 'Not found in Trash', 'txt_kobotolo' ),
 	);
+	
 	$args = array(
 		'description'         => __( 'Post type for portfolio items', 'txt_kobotolo' ),
 		'labels'              => $labels,
@@ -50,21 +51,21 @@ if ( ! function_exists('Kobotolo_custom_post_type') ) {
        
 
     $labels = array( 
-        'name' => _x( 'Portfolio filter', 'portfolio_categories','txt_kobotolo' ),
-        'singular_name' => _x( 'Portfolio filter', 'portfolio_categories' ,'txt_kobotolo'),
-        'search_items' => __( 'Search Portfolio filter', 'portfolio_categories','txt_kobotolo' ),
+        'name' => _x( 'Portfolio filter','portfolio_filter','txt_kobotolo' ),
+        'singular_name' => _x( 'Portfolio filter', 'portfolio_filter', 'txt_kobotolo'),
+        'search_items' => __( 'Search Portfolio filter','txt_kobotolo' ),
         'popular_items' => __( 'Popular filters', 'txt_kobotolo' ),
         'all_items' => __( 'All filters', 'txt_kobotolo'),
         'parent_item' => __( 'Parent filter', 'txt_kobotolo' ),
-        'parent_item_colon' => __( 'Parent Filter:', 'portfolio_categories','txt_kobotolo' ),
+        'parent_item_colon' => __( 'Parent Filter:', 'txt_kobotolo' ),
         'edit_item' => __( 'Edit Filter' ,'txt_kobotolo'),
-        'update_item' => __( 'Update Filter', 'portfolio_categories' ,'txt_kobotolo'),
+        'update_item' => __( 'Update Filter', 'txt_kobotolo'),
         'add_new_item' => __( 'Add New Filter', 'txt_kobotolo' ),
         'new_item_name' => __( 'New Item Name', 'txt_kobotolo' ),
-        'separate_items_with_commas' => _x( 'Separate Filters with commas', 'portfolio_categories' ,'txt_kobotolo'),
-        'add_or_remove_items' => _x( 'Add or remove Filter', 'portfolio_categories','txt_kobotolo' ),
-        'choose_from_most_used' => _x( 'Choose from the most used Filter', 'portfolio_categories','txt_kobotolo' ),
-        'menu_name' => __( 'Portfolio Filter', 'portfolio_categories','txt_kobotolo' ),
+        'separate_items_with_commas' => _x( 'Separate Filters with commas','portfolio_filter', 'txt_kobotolo'),
+        'add_or_remove_items' => _x( 'Add or remove Filter','portfolio_filter', 'txt_kobotolo' ),
+        'choose_from_most_used' => _x( 'Choose from the most used Filter', 'portfolio_filter','txt_kobotolo' ),
+        'menu_name' => __( 'Portfolio Filter', 'txt_kobotolo' ),
         // 'register_meta_box_cb' => 'add_events_metaboxes',
     );
 
