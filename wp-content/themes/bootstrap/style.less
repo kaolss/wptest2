@@ -2,10 +2,10 @@
 Theme Name: WP Bootstrap
 Theme URI: http://teamtreehouse.com/wordpress-bootstrap-theme-tutorial
 Description: A demo theme built to accompany the Treehouse blog post <a href="http://teamtreehouse.com/wordpress-bootstrap-theme-tutorial">How to Build a WordPress Theme with Bootstrap</a>.
-Author: Zac Gordon
-Author URI: http://teamtreehouse.com/
+Author: Karin H Olsson
+Author URI: http://kobotolo.se
 Version: 1.0
-Tags: responsive, white, bootstrap
+Tags: 
 
 License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
 License URI: http://creativecommons.org/licenses/by-sa/3.0/
@@ -26,6 +26,7 @@ This simple theme was built using the example Bootstrap theme "Basic marketing s
 #portfolio {     
         background:orange;
         h2,a {color:red; font-size:20px;};
+        .portfolio-item { float:left; }
         .portfolio-item.post-3 { width: 33%; }
         .portfolio-item.post-4 { width: 25%; }
         .portfolio-item.post-5 { width: 20%; }
@@ -53,6 +54,7 @@ This simple theme was built using the example Bootstrap theme "Basic marketing s
     img.portfolio-image {max-width:100%;height:auto;}
     #column-width-demo2 .item.w2 { width: 40%; }
 }
+
 
 @media (max-width: 767px) {
 #portfolio {     
@@ -104,11 +106,14 @@ article img {
 
 .row.before_footer {
     margin-left: -@inner_padding;
+    background:whitesmoke;
 }
 
 .before_footer {
     clear: both;
-    background: grey;
+}
+footer {
+    background:grey;
 }
 .slider { 
     overflow:hidden;
@@ -130,7 +135,7 @@ article img {
 .entry-content{
 }
 .site-container {
-/*    background: whitesmoke;*/
+    background: whitesmoke;
 }
 
 
@@ -216,3 +221,62 @@ a img.aligncenter {
     margin: 0;
     padding: 0 4px 5px;
 }
+
+
+.gallery {
+	overflow: hidden;
+}
+
+.gallery-caption {
+color: orange;
+}
+.gallery img {
+	border: 1px solid #ddd;
+	height: auto;
+	padding: 4px;
+}
+
+.gallery img:hover {
+	border: 1px solid #999;
+}
+.gallery-item {
+	float: left;
+	margin: 0 0 28px;
+	text-align: center;
+        min-height:175px;
+}
+
+.gallery-columns-2 .gallery-item {
+	width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	width: 33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	width: 16.6666%;
+}
+
+.gallery-columns-7 .gallery-item {
+	width: 14.2857%;
+}
+
+.gallery-columns-8 .gallery-item {
+	width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	width: 11.1111%;
+}
+
+.commentlist .bypostauthor {font-weight:bold;}
+.commentlist li ul.children li.bypostauthor {}

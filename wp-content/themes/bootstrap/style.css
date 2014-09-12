@@ -2,50 +2,55 @@
 Theme Name: WP Bootstrap
 Theme URI: http://teamtreehouse.com/wordpress-bootstrap-theme-tutorial
 Description: A demo theme built to accompany the Treehouse blog post <a href="http://teamtreehouse.com/wordpress-bootstrap-theme-tutorial">How to Build a WordPress Theme with Bootstrap</a>.
-Author: Zac Gordon
-Author URI: http://teamtreehouse.com/
+Author: Karin H Olsson
+Author URI: http://kobotolo.se
 Version: 1.0
-Tags: responsive, white, bootstrap
+Tags: 
 
 License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
 License URI: http://creativecommons.org/licenses/by-sa/3.0/
 
 This simple theme was built using the example Bootstrap theme "Basic marketing site" found on the Bootstrap web site http://twitter.github.com/bootstrap/examples/hero.html
 */
-/* line 26, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000326}}
+/* line 26, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000326}}
 #portfolio {
   background: orange;
 }
-/* line 28, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000328}}
+/* line 28, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000328}}
 #portfolio h2,
 #portfolio a {
   color: red;
   font-size: 20px;
 }
-/* line 29, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000329}}
+/* line 29, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000329}}
+#portfolio .portfolio-item {
+  float: left;
+}
+/* line 30, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000330}}
 #portfolio .portfolio-item.post-3 {
   width: 33%;
 }
-/* line 30, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000330}}
+/* line 31, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000331}}
 #portfolio .portfolio-item.post-4 {
   width: 25%;
 }
-/* line 31, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000331}}
+/* line 32, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000332}}
 #portfolio .portfolio-item.post-5 {
   width: 20%;
 }
-/* line 32, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000332}}
+/* line 33, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000333}}
 #portfolio .grid-sizer {
   width: 33%;
 }
-/* line 33, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000333}}
+/* line 34, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000334}}
 #portfolio .portfolio-item:hover {
   border: 1px grey solid;
   background: whitesmoke;
@@ -54,129 +59,134 @@ This simple theme was built using the example Bootstrap theme "Basic marketing s
   margin-left: -1%;
   margin-top: -2%;
 }
-/* line 42, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000342}}
+/* line 43, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000343}}
 #portfolio .portfolio-item.post-3:hover {
   width: 35%;
 }
-/* line 45, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000345}}
+/* line 46, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000346}}
 #portfolio .portfolio-item.post-4:hover {
   width: 27%;
 }
-/* line 48, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000348}}
+/* line 49, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000349}}
 #portfolio .portfolio-item.post-5:hover {
   width: 22%;
 }
-/* line 51, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000351}}
+/* line 52, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000352}}
 #portfolio .portfolio-item:hover > .text {
   display: block;
   padding: 10px;
 }
-/* line 52, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000352}}
+/* line 53, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000353}}
 #portfolio .text {
   display: none;
 }
-/* line 53, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000353}}
+/* line 54, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000354}}
 #portfolio img.portfolio-image {
   max-width: 100%;
   height: auto;
 }
-/* line 54, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000354}}
+/* line 55, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000355}}
 #portfolio #column-width-demo2 .item.w2 {
   width: 40%;
 }
 @media (max-width: 767px) {
-  /* line 58, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000358}}
+  /* line 60, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000360}}
   #portfolio {
     margin-right: 15px;
   }
-  /* line 60, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000360}}
+  /* line 62, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000362}}
   #portfolio .portfolio-item.post-3 {
     width: 50%;
   }
-  /* line 61, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000361}}
+  /* line 63, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000363}}
   #portfolio .portfolio-item.post-4 {
     width: 50%;
   }
-  /* line 62, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000362}}
+  /* line 64, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000364}}
   #portfolio .portfolio-item.post-5 {
     width: 50%;
   }
-  /* line 63, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000363}}
+  /* line 65, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000365}}
   #portfolio .grid-sizer {
     width: 33%;
   }
-  /* line 64, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000364}}
+  /* line 66, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000366}}
   #portfolio .portfolio-item.post-3:hover,
   #portfolio .portfolio-item.post-4:hover,
   #portfolio .portfolio-item.post-5:hover {
     width: 52%;
   }
 }
-/* line 72, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000372}}
+/* line 74, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000374}}
 .sticky {
   background: blue;
   padding: 15px;
 }
-/* line 77, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000377}}
+/* line 79, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000379}}
 .page-template-page-mall1-php .entry-image img {
   width: 100%;
 }
-/* line 81, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000381}}
+/* line 83, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000383}}
 .wp-caption,
 article img {
   max-width: 100%;
   height: auto;
 }
-/* line 88, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000388}}
+/* line 90, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000390}}
 .alignright {
   float: right;
   margin-left: 10px;
   margin-bottom: 10px;
 }
-/* line 93, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000393}}
+/* line 95, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\0000395}}
 .alignleft {
   float: left;
   margin-right: 10px;
   margin-bottom: 10px;
 }
-/* line 100, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003100}}
+/* line 102, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003102}}
 .site-inner {
   /*    padding-left: @inner_padding;
     padding-right: @inner_padding;
 */
 }
-/* line 105, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003105}}
+/* line 107, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003107}}
 .row.before_footer {
   margin-left: -15px;
+  background: whitesmoke;
 }
-/* line 109, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003109}}
+/* line 112, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003112}}
 .before_footer {
   clear: both;
+}
+/* line 115, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003115}}
+footer {
   background: grey;
 }
-/* line 113, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003113}}
+/* line 118, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003118}}
 .slider {
   overflow: hidden;
   background: grey;
@@ -184,83 +194,83 @@ article img {
   width: 100%;
   margin: 0 auto;
 }
-/* line 121, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003121}}
+/* line 126, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003126}}
 .entry-data {
   clear: both;
 }
-/* line 123, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003123}}
+/* line 128, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003128}}
 .entry-data span {
   margin-left: 0;
   display: initial;
 }
-/* line 127, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003127}}
+/* line 132, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003132}}
 .entry {
   clear: both;
 }
-/* line 132, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003132}}
+/* line 137, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003137}}
 .site-container {
-  /*    background: whitesmoke;*/
+  background: whitesmoke;
 }
-/* line 138, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003138}}
+/* line 143, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003143}}
 .alignnone {
   margin: 5px 20px 20px 0;
 }
-/* line 142, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003142}}
+/* line 147, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003147}}
 .aligncenter,
 div.aligncenter {
   display: block;
   margin: 5px auto 5px auto;
 }
-/* line 148, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003148}}
+/* line 153, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003153}}
 .alignright {
   float: right;
   margin: 5px 0 20px 20px;
 }
-/* line 153, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003153}}
+/* line 158, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003158}}
 .alignleft {
   float: left;
   margin: 5px 20px 20px 0;
 }
-/* line 158, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003158}}
+/* line 163, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003163}}
 .aligncenter {
   display: block;
   margin: 5px auto 5px auto;
 }
-/* line 163, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003163}}
+/* line 168, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003168}}
 a img.alignright {
   float: right;
   margin: 5px 0 20px 20px;
 }
-/* line 168, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003168}}
+/* line 173, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003173}}
 a img.alignnone {
   margin: 5px 20px 20px 0;
 }
-/* line 172, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003172}}
+/* line 177, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003177}}
 a img.alignleft {
   float: left;
   margin: 5px 20px 20px 0;
 }
-/* line 177, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003177}}
+/* line 182, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003182}}
 a img.aligncenter {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 183, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003183}}
+/* line 188, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003188}}
 .wp-caption {
   background: #fff;
   border: 1px solid #f0f0f0;
@@ -269,23 +279,23 @@ a img.aligncenter {
   padding: 5px 3px 10px;
   text-align: center;
 }
-/* line 191, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003191}}
+/* line 196, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003196}}
 .wp-caption.alignnone {
   margin: 5px 20px 20px 0;
 }
-/* line 195, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003195}}
+/* line 200, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003200}}
 .wp-caption.alignleft {
   margin: 5px 20px 20px 0;
 }
-/* line 199, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003199}}
+/* line 204, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003204}}
 .wp-caption.alignright {
   margin: 5px 0 20px 20px;
 }
-/* line 204, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003204}}
+/* line 209, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003209}}
 .wp-caption img {
   border: 0 none;
   height: auto;
@@ -294,11 +304,86 @@ a img.aligncenter {
   padding: 0;
   width: auto;
 }
-/* line 213, C:\xampp5\htdocs\wputv\wptest2\wp-content\themes\bootstrap\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp5\/htdocs\/wputv\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003213}}
+/* line 218, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003218}}
 .wp-caption p.wp-caption-text {
   font-size: 11px;
   line-height: 17px;
   margin: 0;
   padding: 0 4px 5px;
+}
+/* line 226, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003226}}
+.gallery {
+  overflow: hidden;
+}
+/* line 230, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003230}}
+.gallery-caption {
+  color: orange;
+}
+/* line 233, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003233}}
+.gallery img {
+  border: 1px solid #ddd;
+  height: auto;
+  padding: 4px;
+}
+/* line 239, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003239}}
+.gallery img:hover {
+  border: 1px solid #999;
+}
+/* line 242, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003242}}
+.gallery-item {
+  float: left;
+  margin: 0 0 28px;
+  text-align: center;
+  min-height: 175px;
+}
+/* line 249, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003249}}
+.gallery-columns-2 .gallery-item {
+  width: 50%;
+}
+/* line 253, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003253}}
+.gallery-columns-3 .gallery-item {
+  width: 33%;
+}
+/* line 257, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003257}}
+.gallery-columns-4 .gallery-item {
+  width: 25%;
+}
+/* line 261, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003261}}
+.gallery-columns-5 .gallery-item {
+  width: 20%;
+}
+/* line 265, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003265}}
+.gallery-columns-6 .gallery-item {
+  width: 16.6666%;
+}
+/* line 269, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003269}}
+.gallery-columns-7 .gallery-item {
+  width: 14.2857%;
+}
+/* line 273, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003273}}
+.gallery-columns-8 .gallery-item {
+  width: 12.5%;
+}
+/* line 277, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003277}}
+.gallery-columns-9 .gallery-item {
+  width: 11.1111%;
+}
+/* line 281, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/style\.less}line{font-family:\00003281}}
+.commentlist .bypostauthor {
+  font-weight: bold;
 }
