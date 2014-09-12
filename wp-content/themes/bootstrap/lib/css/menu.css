@@ -1,0 +1,255 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/*********** Both mobile and desktop **************/
+/* line 26, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\0000326}}
+.menu-primary a {
+  display: block;
+  padding-left: 10px;
+  color: #ffffff;
+}
+/* line 31, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\0000331}}
+.menu-primary a:hover {
+  text-decoration: none;
+}
+/*********** rememberNav **************/
+/* line 37, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\0000337}}
+#rememberNav {
+  /***************** sub menu **************/
+}
+/* line 38, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\0000338}}
+#rememberNav .menu-primary {
+  display: block !important;
+  height: auto;
+  list-style: none;
+}
+/* line 43, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\0000343}}
+#rememberNav nav {
+  background: #000000;
+  padding: 0;
+  height: 90px;
+  border-top: 10px solid grey;
+}
+/* line 49, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\0000349}}
+#rememberNav .menu-right {
+  float: right;
+  padding-right: 20px;
+}
+/* line 53, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\0000353}}
+#rememberNav .menu-right a i {
+  line-height: inherit;
+}
+/* line 56, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\0000356}}
+#rememberNav #menu-mobile {
+  display: none;
+  height: 0;
+  height: 90px;
+}
+/* line 61, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\0000361}}
+#rememberNav .menu-item {
+  line-height: 90px;
+  height: 90px;
+  float: left;
+  margin-top: -10px;
+}
+/* line 65, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\0000365}}
+#rememberNav .menu-item a {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+/* line 71, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\0000371}}
+#rememberNav .menu-item.current-menu-item {
+  border-top: 10px solid #0000ff;
+  margin-top: -10px;
+}
+/* line 75, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\0000375}}
+#rememberNav .menu-item:hover {
+  border-top: 10px solid #0000ff;
+  /*@nav_hover_bg;*/
+  color: #0000ff;
+  margin-top: -10px;
+}
+/* line 80, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\0000380}}
+#rememberNav .menu-item:hover > a {
+  margin-top: -10px;
+}
+/* line 83, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\0000383}}
+#rememberNav .current-menu-item a {
+  margin-top: -10px;
+}
+/* line 85, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\0000385}}
+#rememberNav .menu-item:hover > .sub-menu {
+  left: auto;
+  opacity: 1;
+}
+/* line 89, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\0000389}}
+#rememberNav .sub-menu {
+  position: absolute;
+  left: -999px;
+}
+/* line 92, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\0000392}}
+#rememberNav .sub-menu .menu-item a {
+  line-height: 40px;
+  height: 40px;
+  width: 200px;
+  background: #ffff00;
+  color: #000000;
+}
+/* line 100, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\00003100}}
+#rememberNav .sub-menu a:hover {
+  color: #800080;
+  background: #0000ff;
+}
+/* line 105, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\00003105}}
+#rememberNav > img {
+  float: left;
+  padding-top: 15px;
+  padding-top: 1.5rem;
+}
+/*************** offcanvas ******************/
+/* line 113, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\00003113}}
+div#offcanvas {
+  position: fixed;
+  width: 100%;
+}
+/* line 116, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\00003116}}
+div#offcanvas nav {
+  height: 100px;
+  line-height: 100px;
+  background: #000000;
+}
+/* line 122, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\00003122}}
+div#offcanvas .sub-menu,
+div#offcanvas .sub-menu a {
+  width: 100%;
+}
+/* line 126, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\00003126}}
+div#offcanvas a:hover {
+  background: #0000ff;
+  color: #800080;
+}
+/* line 130, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\00003130}}
+div#offcanvas #menu-mobile {
+  display: block;
+}
+/* line 133, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\00003133}}
+div#offcanvas .menu-item-has-children {
+  height: auto!important;
+}
+/* line 136, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\00003136}}
+div#offcanvas .menu-item {
+  height: 40px;
+  line-height: 40px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  overflow: hidden;
+}
+/* line 143, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\00003143}}
+div#offcanvas .sub-menu {
+  padding-left: 30px;
+  left: inherit;
+  opacity: 1;
+  position: relative;
+}
+/* line 149, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\00003149}}
+div#offcanvas a,
+div#offcanvas li {
+  background: none;
+  width: 100%;
+  border: none;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+/* line 157, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\00003157}}
+div#offcanvas .menu-primary {
+  width: 0px;
+  height: 100vh;
+  padding-left: 0;
+  background: #000000;
+  overflow: hidden;
+  transition: width 1s ease;
+  position: fixed;
+}
+/* line 166, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\00003166}}
+div#offcanvas #menu-mobile {
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-family: Lato, sans-serif;
+  font-size: 18px;
+  font-size: 1.8rem;
+  background-image: url("../images/logo.png");
+  background-position: 90% center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  padding-left: 5%;
+}
+/* line 179, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\00003179}}
+div#offcanvas #menu-mobile:before {
+  content: "\2261 \0020 Meny";
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+/* line 185, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\00003185}}
+div#offcanvasclear {
+  height: 100px;
+}
+/* line 191, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\00003191}}
+#offcanvas .menu-primary img,
+#offcanvas li.menu-item.menu-right {
+  display: none;
+}
+/* line 197, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\00003197}}
+#offcanvas nav-primary .menu-item,
+#offcanvas .nav-primary ul,
+#offcanvas .nav-primary a,
+#offcanvas .nav-primary .sub-menu,
+#offcanvas .nav-primary .sub-menu a {
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+}
+/***************** Site container *******************/
+/* line 208, C:\xampp\htdocs\wptest2\wp-content\themes\bootstrap\lib\css\menu.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/wptest2\/wp-content\/themes\/bootstrap\/lib\/css\/menu\.less}line{font-family:\00003208}}
+.site-container {
+  transition: margin-left 1s ease;
+  width: 100%;
+  overflow: hidden;
+}
