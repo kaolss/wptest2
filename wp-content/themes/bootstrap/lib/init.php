@@ -5,6 +5,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/*****************************************************************************
+** custom colours
+ * CSS in admin side
+*****************************************************************************/
+add_action('admin_head', 'custom_colors');
+function custom_colors() {
+    echo '<style type="text/css"> 
+    span.helptext {
+	    color: blue;
+	}
+    span.helptext:hover:after {
+	color: blue;
+	content: attr(data-tip-content);
+	background: yellow;
+	border: 1px dotted black;
+	margin: 10px;
+	padding: 10px;
+	cursor: pointer;
+    }
+    .image-radio img {
+width: 20%;
+height: auto;
+}
+    </style>';
+   }
+
 
 /*****************************************************************************
 ************************Add theme templates **********************************
@@ -14,20 +40,38 @@ function my_theme_setup(){
     $x= load_theme_textdomain('txt_kobotolo', get_template_directory() . '/languages');
     get_template_part('lib/post_functions' );
     get_template_part('lib/kobotolo_tax');
-    get_template_part('lib/KoBoToLo - Meta');
-    get_template_part('lib/portfolio');
     get_template_part('lib/cls_menu');
     //get_template_part('lib/resonsive_menu');
     //get_template_part('lib/kobotolo_settings');
+     get_template_part('lib/cls_optionbase');
     get_template_part('lib/cls_themeoptions');
     get_template_part('lib/cls_inittheme');
-//    add_theme_page('KoBoToLo Settings', 'KoBoToLo Settings');//, 'administrator');//, $menu_slug, $function, $icon_url, $position ); 
+    include_once get_template_directory() . '/lib/plugins/sidebar_generator.php';
+    include_once get_template_directory() . '/lib/plugins/multi-post-thumbnails.php';
+     get_template_part('lib/cls_themepagesettings');
+
+    //    add_theme_page('KoBoToLo Settings', 'KoBoToLo Settings');//, 'administrator');//, $menu_slug, $function, $icon_url, $position ); 
 
     if ( ! isset( $content_width ) ) {
 	$content_width = 600;
     }
     add_editor_style( get_stylesheet_directory_uri().'/style.css'); 
-}
+//Define additional "post thumbnails". Relies on MultiPostThumbnails to work
+if (class_exists('MultiPostThumbnails')) {
+    _log('class exists');
+    new MultiPostThumbnails(array(
+        'label' => __('2nd Feature Image','txt_kobotolo'),
+        'id' => 'feature-image-2',
+        'post_type' => 'post'
+        )
+    );
+    new MultiPostThumbnails(array(
+        'label' => __('3nd Feature Image','txt_kobotolo'),
+        'id' => 'feature-image-3',
+        'post_type' => 'post'
+        )
+    );
+}}
 
 /*****************************************************************************
 ************************Addmin scripts ***************************************
@@ -43,6 +87,20 @@ function kobotolo_admin_scripts()
             1
         );
     wp_enqueue_script( 'admin-script-handle',get_stylesheet_directory_uri() . '/lib/js/settings.js', array( 'wp-color-picker' ), false, true ); 
+    wp_enqueue_script('thickbox');
+    wp_enqueue_style('thickbox');
+ 
+    wp_enqueue_script('media-upload');
+    wp_enqueue_script( 'admin-script-handle2',get_stylesheet_directory_uri() . '/lib/js/kobotolo_mediaupload.js',array('jquery'), '', true ); 
+    wp_enqueue_script('kobotolo_mediaupload');
+    //<link rel="stylesheet" href="flexslider.css" type="text/css">
+//<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    //<script src="jquery.flexslider.js"></script>
+//    wp_enqueue_script('script', plugins_url('upload.js', __FILE__), array('jquery'), '', true); 
+?>
+
+<?php
+
 }
 
 /*****************************************************************************
@@ -59,10 +117,16 @@ function kobotolo_scripts()
     wp_enqueue_style( 'menucss', get_stylesheet_directory_uri()  . '/lib/css/menu.css', array(), '4.0.3' );
     wp_enqueue_script( 'masonry' );
     wp_enqueue_script( 'masonry-init', get_stylesheet_directory_uri() . '/lib/js/masonry-init.js', '', array( 'jquery' ), true);
+    wp_enqueue_script( 'flexsliderjs',get_stylesheet_directory_uri() . '/lib/js/jquery.flexslider.js',array('jquery'), '', true ); 
+    wp_enqueue_script( 'flexslider-init', get_stylesheet_directory_uri() . '/lib/js/flexslider_init.js', '', array( 'jquery' ), true);
+    wp_enqueue_script( 'backstretchjs',get_stylesheet_directory_uri() . '/lib/js/jquery.backstretch.js',array('jquery'), '', true ); 
+    wp_enqueue_script( 'vegas-init', get_stylesheet_directory_uri() . '/lib/js/vegas_init.js', '', array( 'jquery' ), true);
+    
     wp_enqueue_style( 'afn-font-awesome', get_stylesheet_directory_uri()  . '/lib/css/font-awesome.min.css', array(), '4.0.3' );
+    wp_enqueue_style( 'vegascss', get_stylesheet_directory_uri()  . '/lib/css/jquery.vegas.css', array(), '4.0.3' );
+    //wp_enqueue_style( 'bootstrapcss', get_stylesheet_directory_uri() . '/lib/css/flexslider.css', array(), '4.0.3' );
+    wp_enqueue_style( 'flexslidercss', get_stylesheet_directory_uri() . '/lib/css/flexslider.css', array(), '4.0.3' );
 }
-
-
 
 /*****************************************************************************
 ****************************Add image sizes **********************************
@@ -70,8 +134,9 @@ function kobotolo_scripts()
 add_image_size('portfolio_3', 500, 500, true);
 add_image_size('portfolio_4', 400, 400, true);
 add_image_size('portfolio_5', 300, 300, true);
-
-
+add_image_size('post_thumbnail', 100, 100, true);
+define('HEADER_IMAGE_WIDTH', 300);
+define('HEADER_IMAGE_HEIGHT', 80);
 /*****************************************************************************
 ****************************Add theme support **********************************
 *****************************************************************************/
@@ -107,8 +172,8 @@ function kobotolo_menus() {
 function kobotolo_widgets_init() {
 	register_sidebar( array(
 		'name' => 'Home right sidebar',
-		'id' => 'home_right_1',
-		'before_widget' => '<div>',
+		'id' => 'default',
+		'before_widget' => '<div class="col-md-4>',
 		'after_widget' => '</div>',
 		'before_title' => '<h2 class="rounded">',
 		'after_title' => '</h2>',
@@ -145,6 +210,8 @@ function kobotolo_widgets_init() {
 		'before_title' => '',
 		'after_title' => '',
 	) );
+    //get_template_part('lib/KoBoToLo - Meta');
+    //get_template_part('lib/portfolio');
 }
 add_action( 'widgets_init', 'kobotolo_widgets_init' );
 
@@ -202,6 +269,7 @@ function filter_image_sizes( $sizes) {
     unset( $sizes['portfolio_3']);
     unset( $sizes['portfolio_4']);
     unset( $sizes['portfolio_5']);
+    unset( $sizes['post_thumbnail']);
     return $sizes;
 }
 add_filter('intermediate_image_sizes_advanced', 'filter_image_sizes');
@@ -228,8 +296,11 @@ function kobotolo_menu($menu, stdClass $args) {
     
 //echo 'kobotolo_menu';
     if ( 'primary' == $args['theme_location']  ) {
-	//$menu= '<img src="'.get_header_image().'" />'.$menu;
+	$logo= '<img src="'.get_header_image().'" style="float:left;"/>';
+	$menu='<li class="menu-item"><a href="'.'">'.$logo.'</a></li>'.$menu;
         global $my_Admin;
+	
+	$logo = $my_Admin->get_option_value('logo');
 	$soc = $my_Admin->get_option_value('facebook');
 	
 	if ($soc!=='') {
@@ -245,4 +316,14 @@ function kobotolo_menu($menu, stdClass $args) {
 	}
 return $menu;
 }
-        
+        if(!function_exists('_log')){
+  function _log( $message ) {
+    if( WP_DEBUG === true ){
+      if( is_array( $message ) || is_object( $message ) ){
+        error_log( print_r( $message, true ) );
+      } else {
+        error_log( $message );
+      }
+    }
+  }
+}
