@@ -15,7 +15,7 @@ $nr=$tag_meta['number']?:3;
 
 $terms=get_the_terms($post->ID,'portfolio_categories');
 $Pk[] = '';?>
-<<div class="site-inner">
+<div class="site-inner">
     <div class="container">
 	<?php do_action('sidebar_left'); ?>  	
 	<div class="col-md-8 main-content">
