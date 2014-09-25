@@ -11,11 +11,25 @@
 <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>    <?php wp_head(); ?>
+<?php 
+global $my_Admin;
+$headerlayout = $my_Admin->get_option_value('header_layout');
+$image1 = $my_Admin->get_option_value('header_image1');
+
+if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>    
+
+<?php wp_head(); ?>
+
 </head>
 <body <?php body_class(); ?>>
     <div class="site-container">	
         <div class="site-header">	
+	<?php echo $image1;?>
+<?php if ($headerlayout==='header1') get_template_part( 'header_contact' ); ?>
+       <div id="headerslide" data-service="<?php echo $image1;?>" style="height:35vh;width:100%;">	
+	   <p class="caption"></p>
+          <p class="caption2"></p>
+       </div>    
 	    <nav class="nav-primary navbar-default" role="navigation">
 		 <?php wp_nav_menu( array(
 		    'theme_location'    => 'primary',
@@ -26,9 +40,10 @@
 		    'menu_class'        => 'menu-main menu-primary'));
 		 ?>
 	    </nav>
-	    <div class="container">	
+	    <div class="site-description">	
+	    <div class="container"><div class="col-md-12">
 		<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
-            </div>
-	</div>
+            </div></div>
+	</div></div>
     <div class="site-content">	
 
