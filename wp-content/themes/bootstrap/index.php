@@ -6,11 +6,12 @@
  * and open the template in the editor.
  */
 get_header(); 
-echo 'index.php';?>
+_log( 'index.php');?>
 <div class="site-inner">
     <div class="container">
-	<?php do_action('sidebar_left'); ?>  	
-	<div class="col-md-8 main-content">
+	<?php //do_action('sidebar_left');   	
+	get_sidebar("left"); ?>  	
+<div class="col-md-8 main-content">
 	    <?php if ( have_posts() ) : 
 		do_action( 'loop_header' ); 
 		 while ( have_posts() ) : the_post(); ?>
@@ -26,7 +27,8 @@ echo 'index.php';?>
 		<p><?php _e('Sorry, this page does not exist.','txt_kobotolo'); ?></p>
 	    <?php endif; ?>
 	</div>
-	    <?php do_action('sidebar_right'); ?>  	
+	<?php get_sidebar(); ?>  	
+	    <?php //do_action('sidebar_right'); ?>  	
     </div>
 </div>
 
