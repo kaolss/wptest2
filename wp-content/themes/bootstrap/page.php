@@ -6,10 +6,15 @@
  * and open the template in the editor.
  */
 
-get_header(); echo 'page'; ?>
+get_header(); 
+_log("==>Page.php")?>
 
-<div class="row site-inner">
-  <div class="col-md-8">
+<div class="site-inner">
+    <div class="container">
+	<?php //do_action('sidebar_left'); 
+get_sidebar("left"); ?>  	
+  	
+	<div class="col-md-8 main-content">
 	<?php if ( have_posts() ) : 
 		while ( have_posts() ) : the_post(); ?>
 		<div class="entry post-<?php the_ID(); ?>" <?php post_class(); ?> ">
@@ -24,9 +29,9 @@ get_header(); echo 'page'; ?>
 	<?php endif; ?>
 
   </div>
-  <div class="col-md-4">
+	    <?php //do_action('sidebar_right'); ?>  	
 	<?php get_sidebar(); ?>  	
   </div>
 </div>
-
+</div>
 <?php get_footer(); ?>
