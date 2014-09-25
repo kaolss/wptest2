@@ -81,6 +81,6 @@ if ( ! function_exists('Kobotolo_custom_post_type') ) {
         'query_var' => true
     );
 
-    register_taxonomy( 'portfolio_categories', array('portfolio_kobotolo','pages'), $args );
+    register_taxonomy( 'portfolio_categories', array('portfolio_kobotolo','page'), $args );
 
 }    
