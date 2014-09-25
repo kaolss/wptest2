@@ -7,6 +7,26 @@
  */
 
 /*****************************************************************************
+********************** Social actions *********************************
+*****************************************************************************/
+add_action('kobotolo_social_icons', 'ok_social_icons', 10);
+function ok_social_icons() {
+        global $my_Admin;
+	
+	$logo = $my_Admin->get_option_value('logo');
+	$soc = $my_Admin->get_option_value('facebook');
+	
+	if ($soc!=='') {
+	    $soc='<a href="'.$soc.'"><i class="fa fa-facebook"></i></a>';
+	}
+echo $soc;
+
+	$soc2 = $my_Admin->get_option_value('twitter');
+	if ($soc2!=='') {
+	$soc2 =  '<a href="'.$soc2.'"><i class="fa fa-twitter"></i></a>';}
+echo $soc2;	  
+}
+/*****************************************************************************
 ********************** Footer with copytight *********************************
 *****************************************************************************/
 add_action('kobotolo_footer', 'ok_footer_creds_text', 10);
@@ -108,7 +128,7 @@ function kobotolo_entry_content( ) {
 ********************** Entry thumbnail ****************************************
 ****************************************************************************/
 add_action( 'entry_thumbnail', 'kobotolo_entry_thumbnail', 10,2 );
-function kobotolo_entry_thumbnail( $portfolio_nr=3, $link='') {
+function kobotolo_entry_thumbnail( $portfolio_nr='3', $link='') {
     //echo 'entry thumbnail';
     
     if( has_post_thumbnail() && !is_single()&& get_post_type()=='post' ) : ?>
@@ -126,7 +146,7 @@ function kobotolo_entry_thumbnail( $portfolio_nr=3, $link='') {
             <a href="<?php echo $link ?>" title="<?php the_title_attribute(); ?>">
 	<?php } ?>
 	    <?php //the_post_thumbnail(); 
-		    $i= get_the_post_thumbnail( get_the_ID(),'portfolio_'.$portfolio_nr, array( 'class' => 'portfolio-image' ) ); 
+		   $i= get_the_post_thumbnail( get_the_ID(),'portfolio_'.$portfolio_nr, array( 'class' => 'portfolio-image' ) ); 
 		   print_r( $i);		    ?>
 	    </a> 
 	<?php         endif; ?>
