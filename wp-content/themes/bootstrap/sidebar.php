@@ -5,5 +5,8 @@ if( !defined( 'ABSPATH' ) ) {
 	exit;
 }?>
 <div  class="sidebar">
-   <?php dynamic_sidebar( 'home_right_1' ); ?>
+   <?php 
+   _log("sidebar.php");
+//      dynamic_sidebar( 'kontakt' ); 
+   generated_dynamic_sidebar('right');?>
 </div>
