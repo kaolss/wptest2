@@ -8,11 +8,10 @@ Author URI: http://www.kobotolo.se
 */
 
 class Cls_themepagesettings extends cls_optionsbase{
-    private $Show_on;
-    private $test=0;
+private $test=0;
     
 /****************************************************************************
-** fields
+** option fields
 *****************************************************************************/
  public function option_fields() {
     if ( ! empty( $this->option_metabox ) ) {
@@ -37,6 +36,7 @@ class Cls_themepagesettings extends cls_optionsbase{
 		    ,'label'=>__('How many images in rows (3, 4 eller 5)','txt_kobotolo')
 		    ,'helptext'=>__('How many images in rows (3, 4 eller 5)','txt_kobotolo')
 		    ,'id' => 'number'
+		    ,'rep'=>false
 		    ,'default' => '3'				
 		    ,'values'=> array('3', '4', '5')
 		    ,'type' => 'select'
@@ -56,7 +56,8 @@ class Cls_themepagesettings extends cls_optionsbase{
 		    ,'helptext'=>__('Use => Left, Right, None or Theme','txt_kobotolo')
 		    ,'id' => 'pagesidebar'
 		    ,'default' => 'Theme'				
-	            ,'values'=> array('Theme', 'left', 'right','none')
+	            ,'rep'=>FALSE
+		    ,'values'=> array('Theme', 'left', 'right','none')
 		    ,'type' => 'select'
 		),    
 	        array(
@@ -125,18 +126,16 @@ return;
 
 
 /*****************************************************************************
-** Function name
+** Render special.
 *****************************************************************************/
     Public function render_special($tabform, $key ) {
 	$this->test=0;
 	 $div = $key;
-	 if ($this->test) {
+	 if ($this->test) :
 	    if  ($this->test) _log('render special field');
 	    if  ($this->test) _log($tabform);
 	    if  ($this->test) _log('render special key');
-	    if  ($this->test) _log($key);
-	    if  ($this->test) _log($div);
-	}
+	endif;
 	switch( $tabform['fields'][0]['type']){
 	    case 'Taxonomy':
 		remove_meta_box('portfolio_categoriesdiv', 'page', 'side');
@@ -146,50 +145,46 @@ return;
 		    'page', 
 		    'normal', 
 		    'high', 
-	array( 'taxonomy' => $tabform['fields'][0]['values'] ));
+		    array( 'taxonomy' => $tabform['fields'][0]['values'] ));
 	    break;            
 	}
- }
+     }
    
 /*****************************************************************************
 * add_meta_box
 *****************************************************************************/
     public function add_meta_box() {
-	$this->test=0;
 	foreach ( $this->option_metabox as $tab_form) : 
 	 if ($this->test){
-	     if  ($this->test) _log('ADD META BOXloop for tabforms');
-	 
-	    //_log($tab_form);
-	    if  ($this->test) _log(' show_onkey');
-	    if  ($this->test) _log($tab_form['show_on']['key']);
-	    if  ($this->test) _log($tab_form['id']);
+	    _log('ADD META BOXloop for tabforms');
+	    _log(' show_onkey');
+	    _log($tab_form['show_on']['key']);
+	    _log($tab_form['id']);
 	 }
 	switch ($tab_form['show_on']['key']) {
 	    case 'post_type':
 		add_meta_box(
-                 $tab_form['show_on']['div']
-	        ,$tab_form['title'] 
-                ,array( $this, 'render_meta_box_content' )
-                ,'portfolio_kobotolo'
-                ,'normal'
-                ,'high'
-		, array('dBfield'=>$tab_form['id'],'info'=>$tab_form['fields']));	
+		    $tab_form['show_on']['div']
+		   ,$tab_form['title'] 
+		   ,array( $this, 'render_meta_box_content' )
+		   ,'portfolio_kobotolo'
+		   ,'normal'
+		   ,'high'
+		   , array('dBfield'=>$tab_form['id'],'info'=>$tab_form['fields']));	
 		break;
 	    case 'page':
-		//_log("Meta box page skapas");
 		add_meta_box(
-                 $tab_form['show_on']['div']
-	        ,$tab_form['title'] 
-                ,array( $this, 'render_meta_box_content' )
-                ,'page'
-                ,'normal'
-                ,'high'
-		, array('dBfield'=>$tab_form['id'],'info'=>$tab_form['fields']));	
+		    $tab_form['show_on']['div']
+		   ,$tab_form['title'] 
+		   ,array( $this, 'render_meta_box_content' )
+		   ,'page'
+		   ,'normal'
+		   ,'high'
+		   , array('dBfield'=>$tab_form['id'],'info'=>$tab_form['fields']));	
 		break;
-	case 'special':
-	    _log("Anrop till render special");
-	    $this->render_special(
+	    case 'special':
+		//_log("Anrop till render special");
+		$this->render_special(
 		$tab_form, 
 		'1');	
 	    break;
@@ -209,12 +204,12 @@ return;
 	$nonce = $_POST['kobotolo_meta_nonce'];
 	if ( ! wp_verify_nonce( $nonce, 'kobotolo_meta' ) ) return $post_id;
 if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return $post_id;
-	if ( 'page' == $_POST['post_type'] ) {
+	if ( 'page' == $_POST['post_type'] ) :
 if ( ! current_user_can( 'edit_page', $post_id ) )return $post_id;
-	} 
-	else {
+	
+	else 
 	    if ( ! current_user_can( 'edit_post', $post_id ) )	return $post_id;
-	}
+	endif;
 	if ( $this->test) _log('starting loop');
 	foreach ( $this->option_metabox as $tab_form) : 
 	   if  ($this->test) _log('First loop followe by id');	
@@ -236,40 +231,57 @@ if ( ! current_user_can( 'edit_page', $post_id ) )return $post_id;
 			$cat_meta[$key] = $_POST[$s][$key];
 		}}    
 	}
-	    if (! isset($cat_meta)) {
+	    if (! isset($cat_meta)) :
 		delete_post_meta( $post_id, $s);
 		continue;
-	    }
+	    endif;
 	update_post_meta( $post_id, $s, $cat_meta );
     endforeach;
     
 	    }
 /*****************************************************************************
-	     * Function name
+ * * Render meta box content
 *****************************************************************************/
     public function render_meta_box_content( $post, $metafields) { 
-    if  ($this->test) _log('START Render meta box content');
-    $c=$metafields['args']['info'];
-    $d=$metafields['args']['dBfield'];
-    $this->kobotolo_init();
-    //_log($this->options);
-    ?>        
+	if  ($this->test) _log('START Render meta box content');
+	$c=$metafields['args']['info'];
+	$d=$metafields['args']['dBfield'];
+	$this->kobotolo_init();
+	?>        
 	<table>
 	    <?php wp_nonce_field( 'kobotolo_meta', 'kobotolo_meta_nonce' );
 	    foreach ($c as $key=>$field) :
 		$value= $this->options[$d][$field['id']];
+		//_log($c);
 		if ($field['type']!='select') $field['values']="";
 		if ($field['type']=='Taxonomy') continue;
 		if (isset($value[$key])) $x=$value[$key]; else $x=$field['default']; 
 		if (isset($field['what'])) $y=$field['what']; else $y="";
-		options_fields::make_text_box(
+		$field['rep'] = isset($field['rep']) ? $field['rep'] : false;
+   		
+		$args =array(
+		  'dbid' => $d.'['.$field['id'].']', 
+		  'type' =>  $field['type'],
+		  'label' => $field['label'],
+		  'localid'=>$d.'['.$field['id'].']', 
+		  'helptext' => $field['helptext'], 
+		  'rep'=>$field['rep'],
+		  'value' =>$value,
+		  'optionvalues'=>$optionvalues=$field['values'],
+		  'specialfunction'=>$y
+		);
+		
+		    options_fields::make_text_box($args);
+		    /*
+		    $dbid=$d.'['.$field['id'].']', 
 		    $type = $field['type'], 
 		    $label= $field['label'],
-		    $id=$d.'['.$field['id'].']', 
+		    $localid=$d.'['.$field['id'].']', 
 		    $helptext= $field['helptext'], 
-		    $value,
-		    $optionvalues=$field['values'],
-		    $specialfunction=$y);
+		    $rep=$field['rep'],
+		    $value=$value,
+		    $optionvalues=$optionvalues=$field['values'],
+		    $specialfunction=$y);*/
 	    endforeach ?>
 	    </table>
     <?php }
@@ -339,6 +351,5 @@ if ( ! current_user_can( 'edit_page', $post_id ) )return $post_id;
     
 	    }
 }
-
 global $my_Pagesettings;
 $my_Pagesettings = new Cls_themepagesettings;
