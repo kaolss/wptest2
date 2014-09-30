@@ -1,9 +1,15 @@
+/* jQuery(function($){
+$("body").on("click", ".dodelete", function(e){
+*/
+
+var $d ="";
+
 $j = jQuery.noConflict();
-$j(document).ready(function() {
-var article;
+ jQuery(function($){
  /* user clicks button on custom field, runs below code that opens new window */
-    $j('#upload_image').click(function() {
-        
+    $("body").on("click",".upload_image",function(e) {
+        $d=$(this).attr("data-rel");
+        console.log($d);
          console.log("media upload");
         /*Thickbox function aimed to show the media window. This function accepts three parameters:
          * 
@@ -28,13 +34,11 @@ var article;
 	
     window.send_to_editor = function(html) {
         var image_url = $j('img', html).attr('src');
-	console.log('send to editor service');//+data.select+image_url);
-        //x="#"+data.select;
-        //console.log(x);
-        //$j(x).val(image_url);
-        $j("#image_path").val(image_url);
+	e = "#".concat($d);
+        f = "#img".concat($d);
+        $j(e).val(image_url);
+        $j(f).attr("src", image_url);
         tb_remove(); // calls the tb_remove() of the Thickbox plugin 
         $j('#submit_button').trigger('click');
-    }
-
+    };
 });
