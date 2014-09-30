@@ -7,7 +7,7 @@
  */
 
 class cls_optionsbase {
-    private $test=1;
+    private $test=0;
     protected $option_metabox = array();
     protected $options = array();
     protected $istheme = false;
@@ -45,20 +45,21 @@ class cls_optionsbase {
         foreach ($option_tabs as $index => $option_tab) {
 	    
 	    global $post;
-	    if (!$this->istheme)  {
+	    if (!$this->istheme)  :
 		if  ($this->test) _log('Getting values for not theme');
 		$dbvalues = get_post_meta(get_the_id(),$option_tab['id'],true);
-	    }else {
+	    else :
 		$dbvalues = get_option($option_tab['id'],true);
-	    }
+		_log($dbvalues);
+	    endif;
 	    foreach ($option_tab['fields'] as $key => $field_id) {
 		$rep=isset($field_id['repeated']) ? :false;
-		if ($rep) :
+		if ($rep===17) :
 		    _log("found repeated field".$key);
 		    $found=TRUE;
 		    $nr=0;
 		    while($found) :
-			$intid = $field_id['id'].$nr;
+			$intid = $field_id['id'].'['.$nr.']';
 			$intiddb = $field_id['id'];//.'0';
 			_log('intid'.$intid);
 			
@@ -88,14 +89,14 @@ class cls_optionsbase {
     public function get_option_key($field_id) {
     	if  ($this->test) _log('Anrop till get_option_key ===>'.$field_id);
 	$option_tabs = $this->option_fields();
-    	foreach ($option_tabs as $key=>$option_tab) { //search all tabs
-	    foreach ($option_tab['fields'] as $field) { //search all fields
-		if ($field['id'] == $field_id) {
+    	foreach ($option_tabs as $key=>$option_tab) : //search all tabs
+	    foreach ($option_tab['fields'] as $field) : //search all fields
+		if ($field['id'] == $field_id) :
 		    if  ($this->test) _log('returning'.$option_tab['id']);
-			return $option_tab['id'];
-		}
-	    }
-    	}
+		    return $option_tab['id'];
+		endif;
+	    endforeach;
+    	endforeach;
 	if  ($this->test) _log('get option key not found');
 	return $this->key; //return default key if field id not found
     }
@@ -116,46 +117,46 @@ class cls_optionsbase {
 	if  ($this->test) _log($field_id);
 	$option_tab = $this->get_option_key($field_id);
 	//$cat_keys = array_keys($_POST[$this->DB_field]);
-	foreach ($this->options as $key=>$field){    
-	    if ($key==$field) {
+	foreach ($this->options as $key=>$field):    
+	    if ($key==$field) :
 		return $options[$key][$field_id];
-	}
-    }}
+	    endif;
+	endforeach;
+    }
 /*****************************************************************************
 ** Add_theme_page
 *****************************************************************************/
     public function add_theme_page() {        
 	if (!$this->istheme) return;
 	$option_tabs = $this->option_fields();
-        foreach ($option_tabs as $index => $option_tab) {
-	    if ( $index == 0) {
+        foreach ($option_tabs as $index => $option_tab) :
+	    if ( $index == 0) :
 		$this->options_pages[] = add_theme_page( $this->title, $this->title, 
 		    'manage_options', $option_tab['id'], array( $this, 'admin_page_display' ) ); 
 		add_theme_page( $option_tabs[0]['id'], $this->title, 
 		    $option_tab['title'], 'manage_options', $option_tab['id'], 
 		    array( $this, 'admin_page_display' ) ); 
-	    } else {
+	    else :
 		$this->options_pages[] = add_submenu_page( $option_tabs[0]['id'], $this->title, $option_tab['title'], 'manage_options', $option_tab['id'], array( $this, 'admin_page_display' ) );
-	    }
-	}
+	    endif;
+	endforeach;
     }
-
 /*****************************************************************************
 ** Add_theme_page
 *****************************************************************************/
     public function register_settings_for_theme() {
         if (!$this->istheme) return;
 	$option_tabs = $this->option_fields();
-	foreach ($option_tabs as $index => $option_tab) {
+	foreach ($option_tabs as $index => $option_tab) :
 	    $x=$option_tab['id']; 
 	    register_setting( $x, $option_tab['id'] );
-	}	
+	endforeach;	
     }
 /*****************************************************************************
 ** Add_theme_page
 *****************************************************************************/
     public function admin_page_display() {
-        if (!$this->istheme) return;
+        if (!$this->istheme) return; //just in case
     	$option_tabs = $this->option_fields(); //get all option tabs
     	$tab_forms = array();     	   	?>
         <div class="wrap cmb_options_page <?php echo '';//$this->key; ?>">        	
