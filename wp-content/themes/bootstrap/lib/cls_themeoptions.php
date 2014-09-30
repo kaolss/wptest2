@@ -23,16 +23,32 @@ class my_Admin  extends cls_optionsbase{
 		    $sss=(isset($value['selectvalues']) ? $value['selectvalues']:'');
 		    $rep=(isset($value['repeated']) ? $value['repeated']:false);
 		    _log($id);
-		    options_fields::make_text_box(
+		   _log($this->options[$id]);
+$args =array(
+		  'dbid' => $id, 
+		  'type' =>  $value['type'],
+		  'label' => $value['label'],
+		  'localid'=>$value['id'],//$value['id'], 
+		  'helptext' => $value['helptext'], 
+		  'rep'=>$rep,
+		  'value' =>$this->options[$id][$value['id']],
+		  'optionvalues'=>$sss);
+		
+		    options_fields::make_text_box($args);
+
+		    
+		    
+		    
+		    /*options_fields::make_text_box( 
 			$dbid = $id, 
 			$type = $value['type'], 
 			$label= $value['label'],
-			$value['id'],//$value['id'],//'kobotolo_'.$id,//$this->DB_field.'['.$key.']', 
+			$localid=$value['id'],//$value['id'],//'kobotolo_'.$id,//$this->DB_field.'['.$key.']', 
 			$helptext= $value['helptext'],//'',//$field['helptext'], 
 			$value=$this->options[$id][$value['id']],//,//$x,
 			$repeated=$rep,
-			$sss//value['selectvalues'])
-			);//
+			$selectedvalues=$sss//value['selectvalues'])
+			);*///
 		endforeach; ?>
 	    </table>	
 	<?php submit_button(); ?>
@@ -42,9 +58,9 @@ class my_Admin  extends cls_optionsbase{
     public function option_fields() {
 
         // Only need to initiate the array once per page-load
-        if ( ! empty( $this->option_metabox ) ) {
+        if ( ! empty( $this->option_metabox ) ) :
             return $this->option_metabox;
-        }        
+        endif;        
 
 /*****************************************************************************
 ** Social settings
@@ -202,7 +218,7 @@ class my_Admin  extends cls_optionsbase{
             'show_on'    => array( 'key' => 'options-page', 'value' => array( 'header_options' ), ),
             'show_names' => true,
             'fields'     => array(
-	      array(
+	     /* array(
 		    'name' => __('Header choose', 'txt_kobotolo'),
 		    'label' => __('Choose header layout', 'txt_kobotolo'),
 		    'helptext' => __('Choose the header you prefer', 'txt_kobotolo'),
@@ -211,7 +227,7 @@ class my_Admin  extends cls_optionsbase{
 		    'type' => 'radioimage',
 		    'selectvalues' => array('header1','header2','header3'),
 		
-	    ),
+	    ),*/
 	      array(
 		    'name' => __('xx', 'txt_kobotolo'),
 		    'label' => __('Text above header in layout 1', 'txt_kobotolo'),
@@ -219,7 +235,7 @@ class my_Admin  extends cls_optionsbase{
 		    'id' => 'contact_text',
 		    'default' => 'Contact us',				
 		    'repeated' => 'true',
-		    'type' => 'textarea',
+		    'type' => 'text',
 	    ),
 	      array(
 		    'name' => __('xx', 'txt_kobotolo'),
